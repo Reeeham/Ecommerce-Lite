@@ -8,7 +8,7 @@ import Header from './Header/Header'
 
 function Layout() {
     return (
-        <div>
+        <div className="main-container">
             <Header />
             <Content />
             <Footer />

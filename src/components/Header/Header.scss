@@ -3,176 +3,128 @@ $colors: (primary: #340ec1,
     primary-light: #4d25e0,
     primary-dark: #0d0724,
     grey: rgba(0, 0, 0, 0.2),
+    light-grey: rgba(204, 204, 204, 1)
 );
 
 @function color($color-name) {
     @return map-get($colors, $color-name);
 }
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-.top-header ul {
+ul{
     list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-
 
 }
 
-.firstHeader {
-    /*align-items: center; centered vertically */
-    /* justify-content: space-between; horizontally*/
+.first-header { 
     background: color(primary);
+    color: white;
     padding: 8px 0;
-    height: 50px;
+
 }
 
-.secondHeader {
-    height: 80px;
+.second-header {
     background: color(primary-light);
-}
-
-.secondHeader>* {
-    flex-basis: 20%;
-}
-
-.firstHeader li {
     color: white;
+    padding: 14px 0;
+
 }
 
-.firstHeader li:first-child {
-    margin-left: 10%;
-}
-
-
-.firstHeader li:last-child span {
-    font-weight: bolder;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-button {
+.subscribe-btn{
     background: color(primary-dark);
-    color: white;
+    color: color(light-grey);
     padding: 10px 10px;
     border-radius: 10px;
 }
-
-// .dropdown {
-//     width: 30%;
-//     display: inline-block;
-
-// }
-
-// .dropdown-menu {
-//     position: absolute;
-//     background: white !important;
-//     padding: 20px !important;
-//     bottom: 0;
-// }
-
-// .dropdown-menu a {
-//     color: color(primary);
-// }
-.dropbtn {
+.subscribe-text{
+    font-weight: 900;
+    color: white;
+}
+.drop-btn {
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px 0 0 10px;
     padding: 8px 10px;
-    width: 100%;
+    width: 30%;
+    background: color(primary-dark);
+    color: white;
   }
   
-  /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+
   }
   
-  /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top:45px;
   }
   
-  /* Links inside the dropdown */
-  .dropdown-content a {
+  .dropdown-content a{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-
+.flags-dropdown-content { 
+    min-width: 59px !important;
+}
 .search {
-    display: flex;
-    flex-basis: 500px;
+    width: 40%;
     position: relative;
-}
 
-.searchInput {
-    position: relative;
+}
+.search-input{
+    padding: 8px 10px;
     width: 70%;
-}
-
-.searchInput input[type="search"] {
-    padding: 10px;
     border-radius: 0 10px 10px 0;
-    width: 100%;
     color: color(grey);
 }
 
-.searchIcon {
+
+.search-icon {
     position: absolute;
     right: 9px;
     bottom: 10px;
     color: color(grey);
 }
 
+.logo-word {
+    font-family: system-ui;
+    font-size: x-large;
+    letter-spacing: 2px;
+}
 
-
-.logoWord {
-    font-family: cursive;
+.logo-word span {
+    font-weight: 500;
+    font-family: sans-serif;
     font-size: larger;
 }
 
-.logoWord span {
-    font-weight: 700;
-    font-family: -webkit-pictograph;
-    font-size: larger;
-}
-
-.userSelections {
-    color: white;
-}
-
-.userSelections li {
-    justify-content: space-evenly;
-    display: flex;
-    align-items: center;
-}
-
-.countryImg {
+.country-img {
     width: 25px;
     height: 20px;
 }
 
-.cartNum {
+.cart-num {
     background: color(primary-dark);
-    width: 32px;
-    height: 33px;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+    width: 24px;
+    height: 23px;
+    margin-left: 5px;
 }
-
+.cart-text-style{
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
 .cursor { 
     cursor: pointer;
 
