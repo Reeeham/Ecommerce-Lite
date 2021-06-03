@@ -9,6 +9,12 @@ $colors: (primary: #340ec1,
 @function color($color-name) {
     @return map-get($colors, $color-name);
 }
+button {
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    padding: 0;
+}
 ul{
     list-style: none;
 
