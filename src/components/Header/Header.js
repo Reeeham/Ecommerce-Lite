@@ -38,7 +38,7 @@ function Header() {
                 <ul className="container">
                     <li className="logo-word" style={{ width: '20%' }}>store<span>logo</span></li>
                     <li className="search">
-                        <div style={{ display: 'flex' }}>
+                        <div>
 
                             <button className="drop-btn" onClick={toggleCategoriesDropDownBtn}>
                                 All Products

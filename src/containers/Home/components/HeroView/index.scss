@@ -1,0 +1,65 @@
+@import "/public/css/colors";
+
+.content {
+  max-width: 50%;
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+
+.promotional-text {
+  margin-top: 10%;
+  color: color(green-light);
+  font-size: smaller;
+  text-transform: uppercase;
+}
+
+.kitchen-text {
+  color: white;
+  font-size: xxx-large;
+  font-weight: 900;
+  font-family: sans-serif;
+}
+.commodo-text {
+  color: white;
+}
+
+.browse-btn {
+  border-radius: 10px;
+  padding: 17px 30px;
+  background: color(green-lighter);
+  color: color(primary-darker);
+  display: inline-block;
+  margin-bottom: 20%;
+  margin-top: 40px;
+}
+.bg-img {
+  background-repeat: "no-repeat";
+  max-width: 50%;
+  margin-top: 20px;
+}
+
+.border-text {
+  border-right: 1px solid color(transparent-grey);
+  height: 64px;
+  width: 2px;
+}
+
+.rounded-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 35px;
+  border: 2px solid white;
+  margin-left: 20px;
+}
+.assistant-text {
+  color: white;
+  margin-left: 10px;
+  font-family: sans-serif;
+}
+.right-icon {
+  margin-left: 15px;
+  color: white;
+}
