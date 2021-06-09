@@ -3,19 +3,19 @@
 .category-list {
     margin-bottom: 3rem;
 }
-.category-list > *{
-   margin-right: 1.2em;
-   margin-top: 4rem;
+// .category-list > *{
+//    margin-right: 1.2em;
+//    margin-top: 4rem;
 
-}
-.category-list .category-card:last-child{
-    margin-right : 0;
-}
+// }
+
 .category-card{
     display: flex;
     background: color(grey-lighter);
     padding: 2em 0 2em 2em;
     border-radius: .7em;
+    margin-right: 1.2em;
+    margin-top: 4rem;
 }
 
 .category-title{
