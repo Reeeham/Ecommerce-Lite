@@ -4,7 +4,7 @@
         "id": 1,
         "promotion_text": "25% off promotional sale",
         "title": "All you need in the kitchen.",
-        "description": "commodo dolor sit amet cum diceam est un partuient nascetur mas ligula massa consequat est un dolor",
+        "description": "Commodo dolor sit amet cum diceam est un partuient nascetur mas ligula massa consequat est un dolor",
         "bg_image": "./../../images/hero-view/handTool.png",
         "action_link": "/BrowseProducts",
         "assistant_image": "./images/hero-view/assistant.png"
@@ -15,7 +15,7 @@
         {
           "id": 1,
           "title": "Fashion",
-          "description": "commodo dolor sit amet cum diceam est un partuient",
+          "description": "Commodo dolor sit amet cum diceam est un partuient",
           "action_link": "/Fashion",
           "image": "./assets/Shoe.JPG",
           "alt_value": "Shoes"

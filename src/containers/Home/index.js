@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CategoryList from './components/category-list';
 import HeroView from './components/HeroView'
 import "./index.scss"
 import { heroView } from './services/heroView';
@@ -15,9 +16,14 @@ function Home() {
 
   },[])
     return (
+      <>
         <div className="main-container hero-view">
           <HeroView heroViewData={heroViewData}/>
         </div>
+        <div className="main-container">
+          <CategoryList />
+        </div>
+        </>
     )
 }
 

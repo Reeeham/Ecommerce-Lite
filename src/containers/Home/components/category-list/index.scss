@@ -1,0 +1,40 @@
+@import "/public/css/colors";
+
+.category-list {
+    margin-bottom: 3rem;
+}
+.category-list > *{
+   margin-right: 1.2em;
+   margin-top: 4rem;
+
+}
+.category-list .category-card:last-child{
+    margin-right : 0;
+}
+.category-card{
+    display: flex;
+    background: color(grey-lighter);
+    padding: 2em 0 2em 2em;
+    border-radius: .7em;
+}
+
+.category-title{
+    color: color(primary-dark);
+    margin-bottom: 2em 2rem;
+}
+
+.category-description{
+    color: #89898c;
+    font-size: 1.2em;
+
+}
+
+.category-btn{
+    color:(primary-dark);
+    font-weight: 700;
+    background: white;
+    height: 5vh;
+    width: 10vw;
+    border-radius: .5em;
+    box-shadow: 1px 2px color(grey);
+}
