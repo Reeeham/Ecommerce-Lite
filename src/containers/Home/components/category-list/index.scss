@@ -14,13 +14,15 @@
     background: color(grey-lighter);
     padding: 3rem 0 3rem 2rem;
     border-radius: .7rem;
-    margin-right: 1.2rem;
+    margin-right: 0.5rem;
     margin-top: 4rem;
     align-items: center;
-    width: calc(calc(100vw / 3) - 1.2rem);
+    width: calc(100vw / 3);
     height: 250px;
 }
-
+.category-card:first-child{
+    margin-left: 0.5rem;
+}
 .category-title{
     color: color(primary-dark);
     margin-bottom: 2em 2rem;
@@ -59,15 +61,18 @@
 .rec-dot{
     background-color: rgb(189 183 199 / 50%) !important;
 }
-
-.rec-arrow-right{
+.rec-arrow{
     background: white !important;
-    color: #9e9e9e !important;
+    color: color(primary-dark) !important;
     padding: 0;
     width: 36px !important;
     height: 36px !important;
     min-width: unset !important; 
      line-height: unset !important;
+     border: none !important;
+}
+.rec-arrow-right{
+    @extend .rec-arrow;
     position: absolute;
     right: 0;
 }
@@ -75,13 +80,7 @@
     background: color(grey) !important;
 }
 .rec-arrow-left{
-    background: white !important;
-    color: #9e9e9e !important;
-    padding: 0;
-    width: 36px !important;
-    height: 36px !important;
-    min-width: unset !important; 
-     line-height: unset !important;
+    @extend .rec-arrow;
     position: absolute;
     left: 0;
     z-index: 1000;
