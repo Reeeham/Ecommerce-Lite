@@ -2,7 +2,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./index.scss";
+import './index.scss';
 import PropTypes from 'prop-types';
 
 function HeroView(props) {

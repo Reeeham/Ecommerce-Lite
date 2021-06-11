@@ -7,6 +7,7 @@
 }
 .category-card{
     display: flex;
+    flex-basis: 86%;
     background: color(grey-lighter);
     padding: 1.2rem 0 1.5rem 1.5rem;
     border-radius: 0.7rem;
@@ -34,7 +35,8 @@
     width: 10vmax;
     height: 50px;
     border-radius: .5em;
-    box-shadow: 1px 2px #d4d3d3;
+    box-shadow: 1px 3px #ccc5c5b0;
+
 }
 
 .category-img{
@@ -72,9 +74,9 @@
     box-shadow: 1px 2px #d4d3d3;
     position: absolute;
     top: 50%;
-    height: 2rem;
-    width: 2rem;
-    min-width: 2rem;
+    height: 2.3rem;
+    width: 2.3rem;
+    min-width: 2.2rem;
     line-height: unset;
     font-size: 1em;
     text-align: center;

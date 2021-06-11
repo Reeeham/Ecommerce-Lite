@@ -8,12 +8,11 @@ const breakPoints = [
     { width: 1, itemsToShow: 3 }
 ];
 
-
 function CategoryList(props) {
     const { categories } = props;
     return (
-        <div className="container">
-            <Carousel breakPoints={breakPoints} className="category-list">
+        <div className="container category-list">
+            <Carousel breakPoints={breakPoints}>
                 {categories.map((cat, i) => {
                     return (
                         <div className="category-card" key={i}>
@@ -33,6 +32,7 @@ function CategoryList(props) {
                     )
                 })}
             </Carousel>
+            
         </div>
     );
 }
