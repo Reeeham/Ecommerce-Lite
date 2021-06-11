@@ -10,22 +10,19 @@ function HeroView(props) {
     return (
             <div className="container">
                 <div className="content">
-
                     <p className="promotional-text">{heroViewData.promotion_text}</p>
                     <h1 className="kitchen-text">{heroViewData.title}</h1>
                     <p className="commodo-text">{heroViewData.description}</p>
                     <Link to={heroViewData.action_link} className="browse-btn">Browse Products</Link>
                     <div>
                     <p className="border-text"></p>
-                    <img className="rounded-img" alt="assistant" src={heroViewData.assistant_image}></img>
+                    <img className="assistant-img" alt="assistant" src={heroViewData.assistant_image}></img>
                     <p className="assistant-text">Talk to an assistant</p>
                     <FontAwesomeIcon
                             icon={faAngleRight}
                             className="cursor right-icon"
                         />
                     </div>
-                   
-
                 </div>
                 <div className="bg-img">
                     <img src={heroViewData.bg_image} alt="background"></img>

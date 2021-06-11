@@ -10,7 +10,6 @@
         "assistant_image": "./images/hero-view/assistant.png"
       }
     ],
-  
     "homeCategory":[
         {
           "id": 1,
@@ -86,7 +85,6 @@
         }
       ]
     ,
-  
     "homeDiscounts": [
       {
         "id": 1,

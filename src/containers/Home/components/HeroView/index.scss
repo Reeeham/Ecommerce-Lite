@@ -1,20 +1,19 @@
-@import "/public/css/colors";
+@import '/public/css/colors';
 
 .content {
+  flex-basis: 25vmax;
   div {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
 }
-
 .promotional-text {
   margin-top: 10%;
   color: color(green-light);
   font-size: smaller;
   text-transform: uppercase;
 }
-
 .kitchen-text {
   color: white;
   font-size: xxx-large;
@@ -28,7 +27,7 @@
 .browse-btn {
   border-radius: 10px;
   padding: 17px 30px;
-  background: color(green-lighter);
+  background: linear-gradient(301deg, color(green-lighter) 39%, rgba(0,212,255,1) 100%);
   color: color(primary-darker);
   display: inline-block;
   margin-bottom: 20%;
@@ -39,14 +38,12 @@
   max-height: 30vmax;
   margin-top: 20px;
 }
-
 .border-text {
   border-right: 1px solid color(transparent-grey);
   height: 64px;
   width: 2px;
 }
-
-.rounded-img {
+.assistant-img {
   border-radius: 50%;
   width: 40px;
   height: 35px;

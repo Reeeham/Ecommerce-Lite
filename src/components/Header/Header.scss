@@ -1,4 +1,4 @@
-@import "/public/css/colors";
+@import '/public/css/colors';
 
 
 
@@ -6,14 +6,12 @@
     background: color(primary);
     color: white;
     padding: 8px 0;
-
 }
 
 .second-header {
     background: color(primary-light);
     color: white;
     padding: 14px 0;
-
 }
 
 .subscribe-btn{
@@ -31,7 +29,6 @@
     cursor: pointer;
     border-radius: 10px 0 0 10px;
     padding: 7px 0px;
-    // width: inherit;
     width: 70%;
     background: #0d0724;
     color: white;

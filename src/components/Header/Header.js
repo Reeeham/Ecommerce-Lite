@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faBox,
     faCaretDown,
     faSearch,
     faShoppingCart,
-} from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Header.scss";
+} from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.scss';
 
 function Header() {
     const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
