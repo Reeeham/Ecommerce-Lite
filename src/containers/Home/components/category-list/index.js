@@ -4,18 +4,15 @@ import Carousel from 'react-elastic-carousel';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const breakPoints = [
-    { width: 1, itemsToShow: 3 }
-];
 
 function CategoryList(props) {
     const { categories } = props;
     return (
         <div className="container category-list">
-            <Carousel breakPoints={breakPoints}>
+            <Carousel  itemPadding={[0,25,0, 0]} itemsToShow={3} outerSpacing={0}>
                 {categories.map((cat, i) => {
                     return (
-                        <div className="category-card" key={i}>
+                        <div className="category-card" key={i} maxWidth="100%">
                             <div className="category-content">
                                 <div>
                                     <h1 className="category-title">{cat.title}</h1>
