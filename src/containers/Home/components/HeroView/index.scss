@@ -1,0 +1,66 @@
+@import '/public/css/colors';
+
+.content {
+  flex-basis: 40vmax;
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+.promotional-text {
+  margin-top: 4rem;
+  margin-bottom: 0;
+  color: color(green-light);
+  font-size: smaller;
+  text-transform: uppercase;
+}
+.kitchen-text {
+  color: white;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 900;
+  font-family: sans-serif;
+  margin: 0;
+  margin-bottom: 1.3rem;
+}
+.commodo-text {
+  color: white;
+  max-width: 53%;
+}
+
+.browse-btn {
+  border-radius: 10px;
+  padding: 17px 30px;
+  background: linear-gradient(301deg, color(green-lighter) 39%, rgba(0,212,255,1) 100%);
+  color: color(primary-darker);
+  display: inline-block;
+  margin-bottom: 20%;
+  margin-top: 40px;
+}
+.bg-img img {
+  max-width: 50vmax;
+  max-height: 30vmax;
+  margin-top: 20px;
+}
+.border-text {
+  border-right: 1px solid color(transparent-grey);
+  height: 4.5rem;
+  width: 2px;
+}
+.assistant-img {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid white;
+  margin-left: 20px;
+}
+.assistant-text {
+  color: white;
+  margin-left: 10px;
+  font-family: sans-serif;
+}
+.right-icon {
+  margin-left: 15px;
+  color: white;
+}
