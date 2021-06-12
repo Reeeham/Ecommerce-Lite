@@ -1,7 +1,7 @@
 @import '/public/css/colors';
 
 .content {
-  flex-basis: 25vmax;
+  flex-basis: 40vmax;
   div {
     display: flex;
     align-items: center;
@@ -9,19 +9,24 @@
   }
 }
 .promotional-text {
-  margin-top: 10%;
+  margin-top: 4rem;
+  margin-bottom: 0;
   color: color(green-light);
   font-size: smaller;
   text-transform: uppercase;
 }
 .kitchen-text {
   color: white;
-  font-size: xxx-large;
+  font-size: 4rem;
+  line-height: 1.2;
   font-weight: 900;
   font-family: sans-serif;
+  margin: 0;
+  margin-bottom: 1.3rem;
 }
 .commodo-text {
   color: white;
+  max-width: 53%;
 }
 
 .browse-btn {
@@ -40,13 +45,13 @@
 }
 .border-text {
   border-right: 1px solid color(transparent-grey);
-  height: 64px;
+  height: 4.5rem;
   width: 2px;
 }
 .assistant-img {
   border-radius: 50%;
-  width: 40px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   border: 2px solid white;
   margin-left: 20px;
 }
