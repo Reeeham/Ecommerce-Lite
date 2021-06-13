@@ -35,13 +35,17 @@ function DiscountsList(props) {
                                     <img alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
                                     <Link to=""><span className="save-text">Save</span> <span className="discount_amount">${product.discount_amount}</span></Link>
                                 </div>
-                                <div className="flash-deal-button">
-                                    <FontAwesomeIcon icon={faBolt} className="deal-icon" style={{ marginRight: "5px" }} />
-                                    <Link to="">Flash deal</Link>
-                                </div>
+                                {
+                                    product.flash_deal === "true" &&
+                                    <div className="flash-deal-button">
+                                        <FontAwesomeIcon icon={faBolt} className="deal-icon" style={{ marginRight: "5px" }} />
+                                        <Link to="">Flash deal</Link>
+                                    </div>
+                                }
+
                             </div>
                             <div className="discount-img">
-                                <img alt="product image" src={product.image} />
+                                <img alt="product" src={product.image} />
                             </div>
                             <div className="product-content">
                                 <div className="brand-name">{product.brand}</div>
@@ -66,14 +70,14 @@ function DiscountsList(props) {
                                             trailWidth={5}
                                             styles={{
                                                 path: {
-                                                    stroke: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange':'pink'
+                                                    stroke: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange' : 'pink'
                                                 },
                                                 trail: {
                                                     stroke: 'rgba(0, 0, 0, 0.2)'
                                                 }
                                             }}
                                         /></div>
-                                    <div className="stock-count" style={{color : product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange':'pink'}}><span>{product.stock_count}</span> {product.stock_count >=2 ? 'Available in stock' : 'Last product in stock'  }</div>
+                                    <div className="stock-count" style={{ color: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange' : 'pink' }}><span>{product.stock_count}</span> {product.stock_count >= 2 ? 'Available in stock' : 'Last product in stock'}</div>
                                 </div>
                             </div>
 
