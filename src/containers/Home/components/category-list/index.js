@@ -1,5 +1,5 @@
 import React from 'react'
-import "./index.scss"
+import './index.scss'
 import Carousel from 'react-elastic-carousel';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';

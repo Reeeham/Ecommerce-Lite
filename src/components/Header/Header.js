@@ -23,7 +23,7 @@ function Header() {
         <>
             <nav className="main-container first-header">
                 <ul className="container">
-                    <li>
+                    <li className="free-shipping-text">
                         <FontAwesomeIcon icon={faBox} style={{ marginRight: "5px" }} /> Free shipping on orders over $100
                     </li>
                     <li>

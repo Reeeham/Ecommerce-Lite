@@ -1,6 +1,8 @@
 @import '/public/css/colors';
 
-
+.free-shipping-text{
+    font-size: 0.7rem;
+}
 
 .first-header { 
     background: color(primary);
@@ -15,17 +17,19 @@
 }
 
 .subscribe-btn{
-    background: color(primary-dark);
-    color: color(light-grey);
     padding: 10px 10px;
     border-radius: 10px;
+    background: color(primary-dark);
+    color: color(light-grey);
+    padding: 0.7rem 0.7rem;
+    border-radius: 10px;
+    font-size: 0.7em;
 }
 .subscribe-text{
     font-weight: 900;
     color: white;
 }
 
-  
   .dropdown {
     position: relative;
     display: flex;
