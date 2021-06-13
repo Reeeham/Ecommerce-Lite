@@ -120,12 +120,13 @@
 .stock {
   display: flex;
   align-items: center;
+  flex: 1;
   .stock-progress {
-    width: 3em;
-    margin-right: 0.5rem;
+    flex:1;
+    margin-right: 0.3em;
   }
   .stock-count {
-    color: hsl(143deg 65% 55%);
+    flex: 3;
     font-size: 0.6rem;
     font-weight: bold;
     span{

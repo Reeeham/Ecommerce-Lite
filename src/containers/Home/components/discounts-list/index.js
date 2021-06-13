@@ -66,14 +66,14 @@ function DiscountsList(props) {
                                             trailWidth={5}
                                             styles={{
                                                 path: {
-                                                    stroke: 'hsl(143deg 65% 55%)'
+                                                    stroke: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange':'pink'
                                                 },
                                                 trail: {
                                                     stroke: 'rgba(0, 0, 0, 0.2)'
                                                 }
                                             }}
                                         /></div>
-                                    <div className="stock-count"><span>32</span> Available in stock</div>
+                                    <div className="stock-count" style={{color : product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange':'pink'}}><span>{product.stock_count}</span> {product.stock_count >=2 ? 'Available in stock' : 'Last product in stock'  }</div>
                                 </div>
                             </div>
 
