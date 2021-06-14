@@ -26,7 +26,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.6rem;
   position: relative;
-  height: 320px;
+  height: 350px;
   width: 85%;
 }
 
@@ -40,7 +40,7 @@
   width: 5vw;
   height: 4vh;
   border-radius: 0.4rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   padding: 0.2em;
   .percent-badge-icon {
     width: 1rem;
@@ -59,7 +59,7 @@
   width: 6.2vw;
   height: 4vh;
   margin-top: 0.5rem;
-  font-size: 0.8em;
+  font-size: 0.6rem;
   padding: 0.2em;
   .deal-icon {
     color: white;
@@ -79,36 +79,37 @@
   align-items: center;
   flex: 3;
   img{
-    height: 90%;
+    height: 100%;
   }
 }
   .product-header {
     display: flex;
     flex-direction: column;
     flex: 2;
+    margin-top: 2em;
   }
   .brand-name {
     text-transform: uppercase;
     color: color(dark-grey);
     font-weight: 600;
     font-size: 0.8rem;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.4em;
   }
   .product-title {
     color: color(title-color);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1em;
   }
 .product-footer{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1;
 }
 
 .price {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5em;
   .new-price {
     color: color(title-color);
     font-weight: bold;
