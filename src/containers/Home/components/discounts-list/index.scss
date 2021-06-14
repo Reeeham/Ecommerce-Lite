@@ -8,24 +8,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h1 {
+  .discounts-title {
     color: color(title-color);
   }
   width: 100vw;
-  a {
+  .all-products-link {
     font-size: 0.7rem;
     font-weight: bold;
-    color: color(primary);
+    color: color(title-color);
   }
 }
 .discount-card {
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 1rem;
-  height: 60%;
-  width: 100%;
+  padding: 0.5em 0.7em;
+  justify-content: space-between;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.6rem;
   position: relative;
+  height: 280px;
+  width: 85%;
 }
 
 .save-button {
@@ -35,13 +37,13 @@
   background: hsl(143deg 65% 55%);
   color: white;
   text-transform: uppercase;
-  width: 7vw;
-  height: 3.5vh;
+  width: 5vw;
+  height: 4vh;
   border-radius: 0.4rem;
-  padding: 0.3em;
-  img {
-    width: 1.3rem;
-    height: 1.3rem;
+  font-size: 0.5em;
+  .percent-badge-icon {
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -53,9 +55,10 @@
   color: white;
   text-transform: uppercase;
   border-radius: 0.4rem;
-  width: 8.5vw;
-  height: 4.5vh;
+  width: 6.2vw;
+  height: 4vh;
   margin-top: 0.5rem;
+  font-size: 0.7em;
   .deal-icon {
     color: white;
   }
@@ -72,46 +75,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.5em;
-  margin-top: 2em;
-  img {
-    width: 100%;
-  }
+  flex: 1;
 }
-.product-content{
+.product-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 1em;
+  flex: 1;
+  .product-header {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
   .brand-name {
     text-transform: uppercase;
     color: color(dark-grey);
-    font-weight: 500;
-    font-size: 0.8rem;
+    font-weight: 600;
+    font-size: 0.6rem;
     margin-bottom: 0.2em;
   }
   .product-title {
-    text-transform: uppercase;
     color: color(title-color);
-    font-weight: 500;
-    font-size: smaller;
+    font-weight: 600;
+    font-size: 0.8em;
   }
 }
-
 
 .price {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
+  flex: 1;
   .new-price {
     color: color(title-color);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-right: 1rem;
   }
   .old-price {
     color: color(dark-grey);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-decoration-line: line-through;
   }
 }
@@ -120,28 +121,40 @@
   align-items: center;
   flex: 1;
   .stock-progress {
-    flex:1;
+    flex: 0.6;
     margin-right: 0.3em;
   }
   .stock-count {
     flex: 3;
     font-size: 0.6rem;
     font-weight: bold;
-    span{
-        font-weight: bolder;
+    display: flex;
+    flex-wrap: nowrap;
+    span {
+      font-weight: bolder;
     }
   }
 }
-.rate{
+.rate {
+  display: flex;
+  font-size: 1.1em;
+  .rate-stars {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .rate-values {
     display: flex;
     align-items: center;
-    font-size: 0.9em;
-    margin-bottom: 0.5em;
-    .rate-stars-value{
-        font-weight: bold;
-        color: color(title-color);
+    justify-content: center;
+    font-size: 0.7em;
+    .rate-stars-value {
+      font-weight: 900;
+      color: color(title-color);
+      margin-right: 0.2em;
     }
-    .rate-count{
-        font-size: 0.7em;
+    .rate-count {
+      font-weight: 500;
     }
+  }
+
 }

@@ -8,31 +8,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProgressBarLine } from 'react-progressbar-line'
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
-import styled from 'styled-components';
-
-const StyledRate = styled(Rate)`
-  &.rc-rate {
-    font-size: ${({ size }) => size}px;
-  }
-`
 function DiscountsList(props) {
     const { discounts } = props;
 
+    function stockCountColor(countValue){
+       return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
+    }
     return (
         <>
             <div className="container">
                 <div className="discounts-header">
-                    <h1>Recent Discounts</h1>
-                    <Link to="">View All Products</Link>
+                    <h1 className="discounts-title">Recent Discounts</h1>
+                    <Link to="" className="all-products-link">View All Products</Link>
                 </div>
             </div>
             <div className="container discounts-list">
-                <Carousel itemPadding={[10, 30, 10, 0]} itemsToShow={4} outerSpacing={0}>
+                <Carousel itemPadding={[10, 10, 10, 0]} itemsToShow={4} outerSpacing={0}>
                     {discounts.map((product, i) => {
                         return (<div className="discount-card" maxWidth="100%" minWidth="100%" key={i}>
                             <div className="buttons">
                                 <div className="save-button">
-                                    <img alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
+                                    <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
                                     <Link to=""><span className="save-text">Save</span> <span className="discount_amount">${product.discount_amount}</span></Link>
                                 </div>
                                 {
@@ -48,12 +44,16 @@ function DiscountsList(props) {
                                 <img alt="product" src={product.image} />
                             </div>
                             <div className="product-content">
-                                <div className="brand-name">{product.brand}</div>
-                                <div className="product-title">{product.title}</div>
+                                <div className="product-header">
+                                    <div className="brand-name">{product.brand}</div>
+                                    <div className="product-title">{product.title}</div>
+                                </div>
                                 <div className="rate">
-                                    <StyledRate size="15" disabled={true} value={product.rate} allowHalf={true} />
-                                    <div className="rate-stars-value">{product.rate}</div>
-                                    <div className="rate-count">{product.rate_count}</div>
+                                    <Rate className="rate-stars" size="10" style={{ fontSize: '1em' }} disabled={true} value={product.rate} allowHalf={true} />
+                                    <div className="rate-values">
+                                        <div className="rate-stars-value">{product.rate}</div>
+                                        <div className="rate-count"> {product.rate_count}</div>
+                                    </div>
                                 </div>
                                 <div className="price">
                                     <div className="new-price">${product.price}</div>
@@ -66,18 +66,18 @@ function DiscountsList(props) {
                                             text=' '
                                             min={0}
                                             max={10}
-                                            strokeWidth={5}
-                                            trailWidth={5}
+                                            strokeWidth={10}
+                                            trailWidth={10}
                                             styles={{
                                                 path: {
-                                                    stroke: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange' : 'pink'
+                                                    stroke: stockCountColor(product.stock_count)
                                                 },
                                                 trail: {
                                                     stroke: 'rgba(0, 0, 0, 0.2)'
                                                 }
                                             }}
                                         /></div>
-                                    <div className="stock-count" style={{ color: product.stock_count >= 5 ? 'hsl(143deg 65% 55%)' : product.stock_count > 1 && product.stock_count <= 5 ? 'orange' : 'pink' }}><span>{product.stock_count}</span> {product.stock_count >= 2 ? 'Available in stock' : 'Last product in stock'}</div>
+                                    <div className="stock-count" style={{ color: stockCountColor(product.stock_count) }}> {product.stock_count}  {product.stock_count >= 2 ? ' Available in stock' : ' Last product in stock'}</div>
                                 </div>
                             </div>
 

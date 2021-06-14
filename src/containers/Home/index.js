@@ -3,7 +3,7 @@ import Loader from '../../components/Loader/Loader';
 import CategoryList from './components/category-list';
 import DiscountsList from './components/discounts-list';
 import HeroView from './components/hero-view';
-import "./index.scss";
+import './index.scss';
 import { categoryList } from './services/categoryList';
 import { discountList } from './services/discountList';
 import { heroView } from './services/heroView';
