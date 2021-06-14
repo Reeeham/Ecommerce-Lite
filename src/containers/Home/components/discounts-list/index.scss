@@ -26,7 +26,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.6rem;
   position: relative;
-  height: 320px;
+  height: 340px;
   width: 85%;
 }
 
@@ -79,7 +79,7 @@
   align-items: center;
   flex: 2;
   img{
-    height: 100%;
+    height: 90%;
   }
 }
 .product-content {
@@ -100,7 +100,7 @@
   }
   .product-title {
     color: color(title-color);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1em;
   }
 }
@@ -141,7 +141,7 @@
 }
 .rate {
   display: flex;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   .rate-stars {
     display: flex;
     flex-wrap: nowrap;
