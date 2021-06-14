@@ -21,7 +21,7 @@
 .discount-card {
   display: flex;
   flex-direction: column;
-  padding: 0.5em 0.7em;
+  padding: 1em 0.7em;
   justify-content: space-between;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.6rem;
@@ -75,16 +75,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  flex: 2;
 }
 .product-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  justify-content: space-between;
+  flex: 2;
   .product-header {
     display: flex;
     flex-direction: column;
-    flex: 1;
   }
   .brand-name {
     text-transform: uppercase;
@@ -103,7 +103,6 @@
 .price {
   display: flex;
   align-items: center;
-  flex: 1;
   .new-price {
     color: color(title-color);
     font-weight: bold;
@@ -119,7 +118,6 @@
 .stock {
   display: flex;
   align-items: center;
-  flex: 1;
   .stock-progress {
     flex: 0.6;
     margin-right: 0.3em;
