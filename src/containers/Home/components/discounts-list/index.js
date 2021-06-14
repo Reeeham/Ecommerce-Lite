@@ -77,7 +77,7 @@ function DiscountsList(props) {
                                                 }
                                             }}
                                         /></div>
-                                    <div className="stock-count" style={{ color: stockCountColor(product.stock_count) }}> {product.stock_count}  {product.stock_count >= 2 ? ' Available in stock' : ' Last product in stock'}</div>
+                                    <div className="stock-count" style={{ color: stockCountColor(product.stock_count) }}> {product.stock_count}  <span>{product.stock_count >= 2 ? ' Available in stock' : ' Last product in stock'}</span></div>
                                 </div>
                             </div>
 
