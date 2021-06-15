@@ -41,7 +41,7 @@
   height: 4vh;
   border-radius: 0.4rem;
   font-size: 0.6rem;
-  font-weight: lighter;
+  font-weight: 600;
   padding: 0.2em;
   .percent-badge-icon {
     width: 1rem;
@@ -61,7 +61,7 @@
   height: 4vh;
   margin-top: 0.5rem;
   font-size: 0.6rem;
-  font-weight: 400;
+  font-weight: 600;
   padding: 0.2em;
   .deal-icon {
     color: white;
@@ -83,6 +83,7 @@
   margin-bottom: 1em;
   img{
     height: 100%;
+    font-weight: 600;
   }
 }
   .product-header {
@@ -101,7 +102,8 @@
   .product-title {
     color: color(title-color);
     font-weight: 500;
-    font-size: 0.8em;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 .product-footer{
   display: flex;
