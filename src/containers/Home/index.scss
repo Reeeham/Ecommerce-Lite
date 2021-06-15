@@ -30,9 +30,9 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: absolute;
     top: 45%;
-    height: 2rem;
-    width: 2rem;
-    min-width: 2rem;
+    height: 1.9rem;
+    width: 1.9rem;
+    min-width: 1.9rem;
     line-height: unset;
     font-size: 1em;
     text-align: center;
@@ -50,6 +50,6 @@
     right: 0;
 }
 .rec.rec-arrow-left{
-    left: -1em;
+    left: -0.9rem;
     z-index: 1000;
 }

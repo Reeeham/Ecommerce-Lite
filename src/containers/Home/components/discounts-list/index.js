@@ -23,7 +23,7 @@ function DiscountsList(props) {
                 </div>
             </div>
             <div className="container discounts-list">
-                <Carousel itemPadding={[10, 10, 10, 0]} itemsToShow={4} outerSpacing={0}>
+                <Carousel itemPadding={[0, 15, 10, 0]} itemsToShow={4} outerSpacing={0}>
                     {discounts.map((product, i) => {
                         return (<div className="discount-card" maxWidth="100%" minWidth="100%" key={i}>
                             <div className="buttons">
