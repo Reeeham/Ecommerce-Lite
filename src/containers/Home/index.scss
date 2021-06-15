@@ -4,3 +4,52 @@
 .hero-view{
     background: color(primary-darker) !important;
 }
+
+/***********   slider beginning************/
+.rec .rec-slider-container{
+    margin: 0;
+}
+
+.rec .rec-dot {
+    border: none;
+    background-color: #d4d3d3;
+    box-shadow: none;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.rec .rec-dot_active, .rec .rec-dot_active:hover , .rec .rec-dot_active:focus { 
+    background:color(primary-dark);
+    box-shadow: unset;
+}
+
+.rec.rec-arrow {
+    background: white;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: absolute;
+    top: 45%;
+    height: 1.9rem;
+    width: 1.9rem;
+    min-width: 1.9rem;
+    line-height: unset;
+    font-size: 1em;
+    text-align: center;
+    color: #717076;
+}
+.rec.rec-arrow:hover,.rec.rec-arrow.rec-arrow-right:hover, .rec.rec-arrow.rec-arrow-left:hover{
+    background: color(grey);
+}
+
+.rec.rec-arrow:focus,.rec.rec-arrow.rec-arrow-right:focus, .rec.rec-arrow.rec-arrow-left:focus{
+    background:color(primary-dark);
+
+}
+.rec.rec-arrow-right{
+    right: 0;
+}
+.rec.rec-arrow-left{
+    left: -1rem;
+    z-index: 1000;
+}
