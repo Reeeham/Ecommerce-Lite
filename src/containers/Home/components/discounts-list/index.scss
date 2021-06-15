@@ -41,6 +41,7 @@
   height: 4vh;
   border-radius: 0.4rem;
   font-size: 0.6rem;
+  font-weight: lighter;
   padding: 0.2em;
   .percent-badge-icon {
     width: 1rem;
@@ -60,6 +61,7 @@
   height: 4vh;
   margin-top: 0.5rem;
   font-size: 0.6rem;
+  font-weight: 400;
   padding: 0.2em;
   .deal-icon {
     color: white;
@@ -78,6 +80,7 @@
   flex-direction: column;
   align-items: center;
   flex: 3;
+  margin-bottom: 1em;
   img{
     height: 100%;
   }
@@ -92,13 +95,13 @@
     text-transform: uppercase;
     color: color(dark-grey);
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-bottom: 0.4em;
   }
   .product-title {
     color: color(title-color);
-    font-weight: 600;
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 0.8em;
   }
 .product-footer{
   display: flex;
