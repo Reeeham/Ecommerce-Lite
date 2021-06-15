@@ -9,7 +9,7 @@ function CategoryList(props) {
     const { categories } = props;
     return (
         <div className="container category-list">
-            <Carousel  itemPadding={[0,25,0, 0]} itemsToShow={3} outerSpacing={0}>
+            <Carousel  itemPadding={[0,0,0, 0]} itemsToShow={3} outerSpacing={0}>
                 {categories.map((cat, i) => {
                     return (
                         <div className="category-card" key={i} maxWidth="100%">
