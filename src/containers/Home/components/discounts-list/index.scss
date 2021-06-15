@@ -1,8 +1,7 @@
-@import '/public/css/colors';
+@import "/public/css/colors";
 
 .discounts-list {
   position: relative;
-
 }
 
 .discounts-header {
@@ -38,8 +37,8 @@
   background: hsl(143deg 65% 55%);
   color: white;
   text-transform: uppercase;
-  width: 5vw;
-  height: 4vh;
+  width: 4.5rem;
+  height: 1.5rem;
   border-radius: 0.4rem;
   font-size: 0.6rem;
   font-weight: 600;
@@ -58,8 +57,8 @@
   color: white;
   text-transform: uppercase;
   border-radius: 0.4rem;
-  width: 6.2vw;
-  height: 4vh;
+  width: 5rem;
+  height: 1.5rem;
   margin-top: 0.5rem;
   font-size: 0.6rem;
   font-weight: 600;
@@ -84,40 +83,36 @@
   margin-bottom: 1em;
   margin-top: 1em;
   margin-right: 1em;
-  img{
+  img {
     height: 100%;
   }
 }
-  .product-header {
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-    margin-top: 2em;
-    margin-left: 1em;
-
-  }
-  .brand-name {
-    text-transform: uppercase;
-    color: color(dark-grey);
-    font-weight: 600;
-    font-size: 0.7rem;
-    margin-bottom: 0.4em;
-
-  }
-  .product-title {
-    color: color(title-color);
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.5;
-
-  }
-.product-footer{
+.product-header {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-top: 2em;
+  margin-left: 1em;
+}
+.brand-name {
+  text-transform: uppercase;
+  color: color(dark-grey);
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-bottom: 0.4em;
+}
+.product-title {
+  color: color(title-color);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.product-footer {
   display: flex;
   flex-direction: column;
   flex: 1;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
-
 }
 
 .price {
@@ -176,5 +171,4 @@
       font-weight: 500;
     }
   }
-
 }
