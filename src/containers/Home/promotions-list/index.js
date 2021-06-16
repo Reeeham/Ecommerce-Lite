@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.scss'
+import PropTypes from 'prop-types'
 
-function PromotionsList() {
+function PromotionsList(props) {
+    const { promotions } = props;
     return (
         <>
             <div className="container">
@@ -17,13 +19,13 @@ function PromotionsList() {
                 <div className="promotions-body ">
                     <div className="promotion">
                         <div className="promotion-top">
-                            <img alt="sweater" src="./../../images/promotions/sweater.jpg" />
+                            <img alt={promotions[0].name} src={promotions[0].image} />
                         </div>
                         <div className="promotion-bottom sweaters">
                             <div className="promotion-icon">
                                 <FontAwesomeIcon icon={faTshirt} />
                             </div>
-                            <div className="promotion-desc">up to 20% off on beauty products</div>
+                            <div className="promotion-desc">{promotions[0].desc}</div>
                             <div className="promotion-btn">
                                 <button><Link to="" >Browse Products</Link></button>
                             </div>
@@ -34,26 +36,26 @@ function PromotionsList() {
                             <div className="promotion-icon">
                                 <FontAwesomeIcon icon={faSprayCan} />
                             </div>
-                            <div className="promotion-desc">up to 20% off on beauty products</div>
+                            <div className="promotion-desc">{promotions[1].desc}</div>
                             <div className="promotion-btn">
                                 <button><Link to="" >Browse Products</Link></button>
                             </div>
                         </div>
                         <div className="promotion-bottom">
-                            <img alt="bike" src="./../../images/promotions/beautyProduct.jpg" />
+                            <img alt={promotions[1].name} src={promotions[1].image} />
                         </div>
                     </div>
                     <div className="promotion">
                         <div className="promotion-top">
-                            <img alt="bike" src="./../../images/promotions/bike.jpg" />
+                            <img alt={promotions[2].name} src={promotions[2].image} />
                         </div>
                         <div className="promotion-bottom bikes">
                             <div className="promotion-icon">
                                 <FontAwesomeIcon icon={faBiking} />
                             </div>
-                            <div className="promotion-desc">up to 20% off on beauty products</div>
+                            <div className="promotion-desc">{promotions[2].desc}</div>
                             <div className="promotion-btn">
-                                <button><Link to="" >Browse Products</Link></button>
+                                <button><Link to="">Browse Products</Link></button>
                             </div>
                         </div>
                     </div>
@@ -64,3 +66,12 @@ function PromotionsList() {
 }
 
 export default PromotionsList
+
+PromotionsList.prototypes = {
+    promotions : PropTypes.shape[{
+        id : PropTypes.number,
+        name : PropTypes.string,
+        image : PropTypes.string,
+        desc : PropTypes.string
+    }]
+}

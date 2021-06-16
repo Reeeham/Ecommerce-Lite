@@ -8,17 +8,19 @@ import PromotionsList from './promotions-list';
 import { categoryList } from './services/categoryList';
 import { discountList } from './services/discountList';
 import { heroView } from './services/heroView';
+import { promotionsList } from './services/promotionsList';
 
 function Home() {
-  const [heroViewData,setHeroViewData] = useState({});
-  const [categories,setCategories] = useState([]);
-  const [discounts,setDiscounts] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [heroViewData, setHeroViewData] = useState({});
+  const [categories, setCategories] = useState([]);
+  const [discounts, setDiscounts] = useState([]);
+  const [promotions, setPromotions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    
+  useEffect(() => {
+
     heroView().then(res => {
-      setHeroViewData( res.data);
+      setHeroViewData(res.data);
       setLoading(false);
     }).catch((error) => {
       console.log('error in getting heroViewData', error)
@@ -28,34 +30,40 @@ function Home() {
       setCategories(res.data);
       setLoading(false);
     }, (err) => {
-      console.log("error in getting categories",err)
+      console.log("error in getting categories", err)
     })
 
     discountList().then(res => {
       setDiscounts(res.data);
       setLoading(false);
-    },(err) => { 
-      console.log("error in getting discounts",err)
+    }, (err) => {
+      console.log("error in getting discounts", err)
     })
-
-  },[])
-    return (
-      <>
-      {loading && <Loader />}
-        <div className="main-container hero-view">
-          <HeroView heroViewData={heroViewData}/>
-        </div>
-        <div className="main-container">
-          <CategoryList categories={categories} />
-        </div>
-        <div className="main-container">
-          <DiscountsList discounts={discounts} />
-        </div>
-        <div className="main-container">
-          <PromotionsList />
-        </div>
-        </>
+    promotionsList().then(res => {
+      setPromotions(res.data);
+      console.log(" promotions", promotions)
+      setLoading(false);
+    }, (err) => console.log("error in getting promotions", err)
     )
+
+  }, [])
+  return (
+    <>
+      {loading && <Loader />}
+      <div className="main-container hero-view">
+        {heroViewData != null && <HeroView heroViewData={heroViewData} /> }
+      </div>
+      <div className="main-container">
+        {categories.length > 0 && <CategoryList categories={categories} /> }
+      </div>
+      <div className="main-container">
+        {discounts.length > 0 && <DiscountsList discounts={discounts} />}
+      </div>
+      <div className="main-container">
+        {promotions.length > 0 && <PromotionsList promotions={promotions}/>}
+      </div>
+    </>
+  )
 }
 
 export default Home

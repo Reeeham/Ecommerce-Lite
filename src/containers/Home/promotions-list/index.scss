@@ -74,20 +74,22 @@
 }
 
 .promotion-desc {
-  font-size: 1.1rem;
-  font-weight: 750;
   color: color(title-color);
-  max-width: 50%;
+    font-size: 1.1rem;
+    font-weight: 750;
+    max-width: 65%;
+    text-align: center;
 }
 
 .promotion-btn {
   button {
     background: white;
-    width: 10rem;
+    width: 9rem;
     height: 3rem;
     border-radius: 0.5rem;
     color: color(title-color);
     font-weight: 650;
+    font-size: 0.8rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   }
 }

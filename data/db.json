@@ -299,19 +299,19 @@
       {
         "id":1,
         "name":"sweater",
-        "image":"./../../images/sweater.JPG",
+        "image":"./../../images/promotions/sweater.JPG",
         "desc":"Up to 25% off on all casual sweaters"
       },
       {
         "id":2,
         "name":"beauty",
-        "image":"./../../images/beautyProduct.JPG",
+        "image":"./../../images/promotions/beautyProduct.JPG",
         "desc":"up to 20% off on beauty products"
       },
       {
         "id":3,
         "name":"bike",
-        "image":"./../../images/bike.JPG",
+        "image":"./../../images/promotions/bike.JPG",
         "desc":"Exciting bike rides with amazing equipment"
       }
     ]
