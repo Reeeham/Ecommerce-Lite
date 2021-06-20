@@ -10,7 +10,7 @@ import { discountList } from './services/discountList';
 import { heroView } from './services/heroView';
 import { promotionsList } from './services/promotionsList';
 
-function Home() {
+const Home = () => {
   const [heroViewData, setHeroViewData] = useState({});
   const [categories, setCategories] = useState([]);
   const [discounts, setDiscounts] = useState([]);
@@ -23,27 +23,24 @@ function Home() {
       setHeroViewData(res.data);
       setLoading(false);
     }).catch((error) => {
-      console.log('error in getting heroViewData', error)
     });
 
     categoryList().then(res => {
       setCategories(res.data);
       setLoading(false);
     }, (err) => {
-      console.log("error in getting categories", err)
     })
 
     discountList().then(res => {
       setDiscounts(res.data);
       setLoading(false);
     }, (err) => {
-      console.log("error in getting discounts", err)
     })
     promotionsList().then(res => {
       setPromotions(res.data);
-      console.log(" promotions", promotions)
+    
       setLoading(false);
-    }, (err) => console.log("error in getting promotions", err)
+    }, (err) => {}
     )
 
   }, [])

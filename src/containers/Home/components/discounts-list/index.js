@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ProgressBarLine } from 'react-progressbar-line'
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
-function DiscountsList(props) {
+const DiscountsList = (props) => {
     const { discounts } = props;
 
-    function stockCountColor(countValue) {
+ const stockCountColor = (countValue) => {
         return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
     }
     return (

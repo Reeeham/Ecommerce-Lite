@@ -300,19 +300,25 @@
         "id":1,
         "name":"sweater",
         "image":"./../../images/promotions/sweater.JPG",
-        "desc":"Up to 25% off on all casual sweaters"
+        "desc":"Up to 25% off on all casual sweaters",
+        "icon":"faTshirt",
+        "type":"top"
       },
       {
         "id":2,
         "name":"beauty",
         "image":"./../../images/promotions/beautyProduct.JPG",
-        "desc":"up to 20% off on beauty products"
+        "desc":"up to 20% off on beauty products",
+        "icon":"faSprayCan",
+        "type":"bottom"
       },
       {
         "id":3,
         "name":"bike",
         "image":"./../../images/promotions/bike.JPG",
-        "desc":"Exciting bike rides with amazing equipment"
+        "desc":"Exciting bike rides with amazing equipment",
+        "icon":"faBiking",
+        "type":"top"
       }
     ]
   }

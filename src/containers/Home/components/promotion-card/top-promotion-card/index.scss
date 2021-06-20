@@ -1,0 +1,14 @@
+.top{
+    .promotion-top {
+        background: #e8f8f8;
+        padding: 1.5rem 0 0 0;
+    
+      }
+      .promotion-bottom {
+        flex: 1.5;
+        img {
+          height: 100%;
+          align-self: stretch;  
+        }
+      }
+}

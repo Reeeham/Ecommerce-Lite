@@ -11,7 +11,7 @@
   .discounts-title {
     color: color(title-color);
   }
-  width: 100%;
+  flex: 1;
   .all-products-link {
     font-size: 0.7rem;
     font-weight: bold;
@@ -26,8 +26,8 @@
   border-radius: 0.6rem;
   position: relative;
   height: 377px;
-  width: 90%;
-  margin: 1rem 0;
+  flex: 1;
+  margin: 0.7rem;
 }
 
 .save-button {

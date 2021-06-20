@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 
-function CategoryList(props) {
+const CategoryList = (props) => {
     const { categories } = props;
     return (
         <div className="container category-list">
