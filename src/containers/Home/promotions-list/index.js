@@ -36,5 +36,6 @@ PromotionsList.prototypes = {
         desc: PropTypes.string,
         icon: PropTypes.string,
         type: PropTypes.string,
+        bg_color: PropTypes.string
     }]
 }

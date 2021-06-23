@@ -11,8 +11,11 @@ export const BottomPromotion = (props) => {
     const { promotion } = props;
 
 
+    const divStyle = {
+        'background': promotion.bg_color,
+    };
     return (<div className="promotion top">
-        <div className="promotion-top">
+        <div className="promotion-top" style={divStyle}>
             <div className="promotion-icon">
                 <FontAwesomeIcon icon={Icons[promotion.icon]}/>
             </div>
@@ -35,5 +38,6 @@ BottomPromotion.prototypes = {
         desc: PropTypes.string,
         icon: PropTypes.string,
         type: PropTypes.string,
+        bg_color: PropTypes.string
     })
 }

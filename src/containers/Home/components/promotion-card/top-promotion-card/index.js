@@ -10,12 +10,16 @@ import * as Icons from '@fortawesome/free-solid-svg-icons';
 
 export const TopPromotion = (props) => {
     const { promotion } = props;
+    
+    const divStyle = {
+        'background': promotion.bg_color,
+    };
 
     return (<div className="promotion">
         <div className="promotion-top">
             <img alt={promotion.name} src={promotion.image} />
         </div>
-        <div className="promotion-bottom bottom">
+        <div className="promotion-bottom bottom"  style={divStyle}>
             <div className="promotion-icon">
                 <FontAwesomeIcon icon={Icons[promotion.icon]}/>
             </div>
@@ -35,5 +39,6 @@ TopPromotion.prototypes = {
         desc: PropTypes.string,
         icon: PropTypes.string,
         type: PropTypes.string,
+        bg_color: PropTypes.string
     })
 }

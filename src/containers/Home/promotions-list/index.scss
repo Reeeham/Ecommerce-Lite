@@ -23,12 +23,12 @@
   justify-content: space-between;
   flex: 1;
   .promotion {
-    flex: 1;
+    flex: 0.5;
     height: 470px;
     display: flex;
     flex-direction: column;
     border-radius: 0.7rem;
-    padding-right: 20px;
+    padding-right: 30px;
 
   }
   .promotion:last-child {
@@ -58,24 +58,25 @@
 }
 
 .promotion-icon {
-  background: #e8f8f8;
   color: color(title-color);
   font-size: 1.7rem;
+  font-weight: 400;
 }
 
 .promotion-desc {
   color: color(title-color);
-    font-size: 1.1rem;
-    font-weight: 750;
-    max-width: 65%;
-    text-align: center;
+  font-size: 1.1rem;
+  font-weight: 750;
+  max-width: 75%;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .promotion-btn {
   button {
     background: white;
-    width: 9rem;
-    height: 3rem;
+    width: 8.5rem;
+    height: 2.5rem;
     border-radius: 0.5rem;
     color: color(title-color);
     font-weight: 650;
