@@ -1,4 +1,6 @@
 @import "/public/css/colors";
+@import "/public/css/variables";
+@import "/public/css/mixins";
 
 .m-5 {
   margin-bottom: 5rem;
@@ -22,6 +24,14 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @include mobile { 
+    flex-direction : column;
+  }
+  @include iPads { 
+    flex-direction : column;
+    width: 60%;
+    margin : auto;
+  }
   .promotion {
        display: flex;
        flex-direction: column;
@@ -29,9 +39,17 @@
        padding-right: 30px;
        flex-grow: 1;
        flex-basis: 0;
+       margin-bottom: 10px;
+       @include iPads { 
+        padding-right: 0;
+      }
+      @include mobile { 
+        padding-right: 0;
+      }
   }
   .promotion:last-child {
     padding-right: 0;
+  
 }
 }
 .promotion-top {
@@ -83,5 +101,14 @@
     font-weight: 650;
     font-size: 0.8rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    @include mobile { 
+      width: 8.5em;
+      height: 2.5em;
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+    }
+    @include iPads { 
+      margin-top: 20px;;
+    }
   }
 }

@@ -1,0 +1,28 @@
+@import "/public/css/variables";
+
+
+@mixin desktop {
+    //large screens
+    @media(max-width: #{$desktop}) { 
+        @content;
+    }
+}
+
+
+@mixin laptop {
+    @media(max-width: #{$laptops}) { 
+        @content;
+    }
+}
+
+@mixin iPads {
+    @media(max-width: #{$iPads}) { 
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width: #{$mobile}) { 
+        @content;
+    }
+}
