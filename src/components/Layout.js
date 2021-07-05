@@ -6,7 +6,7 @@ import Content from './Content'
 import Footer from './Footer'
 import Header from './Header/Header'
 
-function Layout() {
+const Layout = () => {
     return (
         <div className="main-container">
             <Header />

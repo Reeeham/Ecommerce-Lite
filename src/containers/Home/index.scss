@@ -1,11 +1,18 @@
 @import '/public/css/colors';
-
+@import "/public/css/variables";
+@import "/public/css/mixins";
 
 .hero-view{
     background: color(primary-darker) !important;
 }
 
 /***********   slider beginning************/
+.rec .rec-item-wrapper { 
+  @include mobile { 
+      width: 100vw;
+  }
+}
+
 .rec .rec-slider-container{
     margin: 0;
 }
@@ -50,6 +57,6 @@
     right: 0;
 }
 .rec.rec-arrow-left{
-    left: -1rem;
+    left: 0;
     z-index: 1000;
 }

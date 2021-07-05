@@ -299,20 +299,29 @@
       {
         "id":1,
         "name":"sweater",
-        "image":"./../../images/sweater.JPG",
-        "desc":"Up to 25% off on all casual sweaters"
+        "image":"./../../images/promotions/sweater.JPG",
+        "desc":"Up to 25% off on all casual sweaters",
+        "icon":"faTshirt",
+        "type":"top",
+        "bg_color": "#f6f4fa"
       },
       {
         "id":2,
         "name":"beauty",
-        "image":"./../../images/beautyProduct.JPG",
-        "desc":"up to 20% off on beauty products"
+        "image":"./../../images/promotions/beautyProduct.JPG",
+        "desc":"up to 20% off on beauty products",
+        "icon":"faSprayCan",
+        "type":"bottom",
+        "bg_color": "#e4f8f8"
       },
       {
         "id":3,
         "name":"bike",
-        "image":"./../../images/bike.JPG",
-        "desc":"Exciting bike rides with amazing equipment"
+        "image":"./../../images/promotions/bike.JPG",
+        "desc":"Exciting bike rides with amazing equipment",
+        "icon":"faBiking",
+        "type":"top",
+        "bg_color": "#f6f4fa"
       }
     ]
   }

@@ -1,0 +1,114 @@
+@import "/public/css/colors";
+@import "/public/css/variables";
+@import "/public/css/mixins";
+
+.m-5 {
+  margin-bottom: 5rem;
+}
+
+.promotions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .promotions-title {
+    color: color(title-color);
+  }
+  flex: 1;
+  .all-promotions-link {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: color(title-color);
+  }
+}
+.promotions-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @include mobile { 
+    flex-direction : column;
+  }
+  @include iPads { 
+    flex-direction : column;
+    width: 60%;
+    margin : auto;
+  }
+  .promotion {
+       display: flex;
+       flex-direction: column;
+       border-radius: 0.7rem;
+       padding-right: 30px;
+       flex-grow: 1;
+       flex-basis: 0;
+       margin-bottom: 10px;
+       @include iPads { 
+        padding-right: 0;
+      }
+      @include mobile { 
+        padding-right: 0;
+      }
+  }
+  .promotion:last-child {
+    padding-right: 0;
+  
+}
+}
+.promotion-top {
+  flex-grow: 2;
+  flex-basis:0;
+  border-radius: 0.7rem 0.7rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    height: 100%;
+    align-self: stretch;
+    border-radius: 0.7rem 0.7rem 0 0;
+  }
+}
+.promotion-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0 0 0.7rem 0.7rem;
+  flex-grow: 1;
+  flex-basis:0;
+}
+
+.promotion-icon {
+  color: color(title-color);
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.promotion-desc {
+  color: color(title-color);
+  font-size: 1.1rem;
+  font-weight: 750;
+  max-width: 75%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.promotion-btn {
+  button {
+    background: white;
+    width: 8.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    color: color(title-color);
+    font-weight: 650;
+    font-size: 0.8rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    @include mobile { 
+      width: 8.5em;
+      height: 2.5em;
+      padding-left: 0.3em;
+      padding-right: 0.3em;
+    }
+    @include iPads { 
+      margin-top: 20px;;
+    }
+  }
+}

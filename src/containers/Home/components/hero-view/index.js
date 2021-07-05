@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import PropTypes from 'prop-types';
 
-function HeroView(props) {
+const HeroView = (props) => {
     const {heroViewData} = props;
     return (
             <div className="container">

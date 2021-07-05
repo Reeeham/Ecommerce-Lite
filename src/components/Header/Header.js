@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-function Header() {
+const Header = () => {
     const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
     const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
     const [countriesDropdownOpen, setCountriesDropdownOpen] = useState(false);

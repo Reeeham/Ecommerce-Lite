@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from '../containers/Home';
 
-function Content() {
+const Content = () =>{
     return (
         <Home/>
     );
