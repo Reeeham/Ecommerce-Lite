@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.scss'
 import PropTypes from 'prop-types'
-import Promotion from '../components/promotion-card'
+import Promotion from '../promotion-card'
 
 const PromotionsList = (props) => {
     const { promotions } = props;
