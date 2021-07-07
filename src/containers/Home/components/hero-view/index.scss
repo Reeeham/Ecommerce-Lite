@@ -1,5 +1,6 @@
 @import '/public/css/colors';
-
+@import "/public/css/variables";
+@import "/public/css/mixins";
 .content {
   flex-basis: 40vmax;
   div {
@@ -27,6 +28,10 @@
 .commodo-text {
   color: white;
   max-width: 53%;
+  @include mobile { 
+    max-width: 100%;
+
+  }
 }
 
 .browse-btn {
@@ -41,6 +46,11 @@
 .bg-img img {
   max-width: 50vmax;
   max-height: 30vmax;
+  @include mobile { 
+    width: 100px;
+    height: 200px;
+    margin-top: 0;
+  }
   margin-top: 20px;
 }
 .border-text {
