@@ -13,14 +13,28 @@ const Header = () => {
     const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
     const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
     const [countriesDropdownOpen, setCountriesDropdownOpen] = useState(false);
+    const [showNav, setShowNav] = useState(true);
     const [selectedCountryImgPath, setSelectedCountryImgPath] = useState('./../../images/countries-icons/united-states.svg');
     const toggleCategoriesDropDownBtn = () => setCategoriesDropdownOpen(!categoriesDropdownOpen);
     const toggleAccountDropDownBtn = () => setAccountDropdownOpen(!accountDropdownOpen);
     const toggleCountriesDropDownBtn = () => setCountriesDropdownOpen(!countriesDropdownOpen);
     const handleCountryChange = (name) => { setSelectedCountryImgPath(name) }
-
+    const toggleNav = () => {
+        setShowNav(!showNav);
+        let firstHeader = document.querySelector('.main-container .first-header');
+        let secondHeader = document.querySelector('.main-container .second-header');
+        if(showNav) { 
+            firstHeader.style.display = "flex";
+            secondHeader.style.display = "flex";
+        }else { 
+            firstHeader.style.display = "none";
+            secondHeader.style.display = "none"
+        }
+    }
     return (
         <>
+          
+            <Link href="#" id="toggle" onClick={toggleNav}><span></span></Link> 
             <nav className="main-container first-header">
                 <ul className="container">
                     <li className="free-shipping-text">
@@ -73,9 +87,11 @@ const Header = () => {
                                     <Link to=""></Link>
                                     <Link to=""></Link>
                                 </div>}
-                        </div></li>
-                    <li>
-                        <div className="dropdown">
+                        </div>
+                        </li>
+                  
+                    <li className="menus">
+                    <div className="dropdown">
                             <img
                                 className="country-img cursor"
                                 alt="united states"
@@ -110,8 +126,7 @@ const Header = () => {
                                         /></Link>
                                 </div>}
                         </div>
-                    </li>
-                    <li><div className="dropdown">
+                        <div className="dropdown">
                         <div>
                             <FontAwesomeIcon
                                 icon={faShoppingCart}
