@@ -1,5 +1,6 @@
 @import "/public/css/colors";
-
+@import "/public/css/variables";
+@import "/public/css/mixins";
 .discounts-list {
   position: relative;
 }
@@ -10,12 +11,24 @@
   align-items: center;
   .discounts-title {
     color: color(title-color);
+    @include mobile{
+      font-size: 1rem;
+    }
+    @include iPads { 
+      font-size: 1rem;
+    }
   }
   flex: 1;
   .all-products-link {
     font-size: 0.7rem;
     font-weight: bold;
     color: color(title-color);
+    @include mobile {
+      font-size: .5rem;
+    }
+    @include iPads { 
+      font-size: .5rem;
+    }
   }
 }
 
