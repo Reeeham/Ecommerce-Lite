@@ -129,15 +129,14 @@
 }
 .search {
     margin-top: .3em;
-    flex-basis: 30vmax;
     position: relative;
     @include mobile { 
-        flex-basis: 10vmax;
+        flex-basis: 10vmax !important;
         margin-top: 2em;
     }
     @include iPads { 
-        flex-basis: 5vmax;
         margin-top: 2em;
+        width: 73vw;
 
     }
     div{
@@ -182,7 +181,8 @@
         order: 2;
         margin-top: .3em;
         border-radius: 0.5rem;
-        padding: 0.5rem 2.8rem;
+        padding: 0.5rem 3.9rem;
+        width: 100%;
 
      }
 
@@ -203,6 +203,13 @@
     font-family: system-ui;
     font-size: x-large;
     letter-spacing: 2px;
+    @include iPads{
+        font-size: 2rem;
+        box-sizing: content-box;
+        margin: 1rem;
+        margin-top: 2rem;
+
+    }
 }
 
 .logo-word span {
