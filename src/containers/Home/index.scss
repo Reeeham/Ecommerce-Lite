@@ -13,6 +13,7 @@
   }
   @include iPads { 
       width: 270px !important;
+      margin: 20px;
   }
 }
 .rec .rec-carousel-item { 
@@ -20,11 +21,7 @@
       width: 100% !important;
     }
   }
-.rec .rec-swipable {
-    @include iPads { 
-        //flex-direction: column !important;
-    }
-}
+
 .rec .rec-slider-container{
     margin: 0;
 }

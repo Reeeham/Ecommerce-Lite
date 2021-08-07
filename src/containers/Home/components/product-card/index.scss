@@ -6,13 +6,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 6px 4px 11px 0px #d2c9c975;
   border-radius: 0.6rem;
   position: relative;
   height: 377px;
   flex: 1;
   margin: 0  .7rem .7rem 0 !important;
-
  
 }
 
@@ -108,12 +107,12 @@
   .new-price {
     color: color(title-color);
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-right: 0.5em;
   }
   .old-price {
     color: color(dark-grey);
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-decoration-line: line-through;
   }
 }
@@ -126,7 +125,7 @@
   }
   .stock-count {
     flex: 3;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 900;
     display: flex;
     flex-wrap: nowrap;
@@ -138,7 +137,7 @@
 }
 .rate {
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   .rate-stars {
     display: flex;
     flex-wrap: nowrap;

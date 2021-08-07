@@ -155,22 +155,25 @@
 .search-input{
     height: 100%;
     width: inherit;
+    outline-color: white;
     border-radius: 0 0.5rem 0.5rem 0;
     flex: 3;
     padding: 0 0.8rem;
     color: rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+
     @include mobile { 
         border-radius: 0.5rem;
         padding: 0.8rem;
     }
 }
-
 .drop-btn {
     font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-style: none;
     border-radius: 0.5rem 0 0 0.5rem;
     height: 100%;
     padding: 0 0.8rem;
