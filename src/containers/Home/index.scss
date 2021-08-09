@@ -15,6 +15,7 @@
       width: 270px !important;
       margin: 20px;
   }
+  
 }
 .rec .rec-carousel-item { 
     @include mobile { 
@@ -64,8 +65,14 @@
 }
 .rec.rec-arrow-right{
     right: 0;
+    @include iPadPro{
+        right: -9px;
+    }
 }
 .rec.rec-arrow-left{
     left: 0;
     z-index: 1000;
+    @include iPadPro{
+        left: -13px;
+    }
 }
