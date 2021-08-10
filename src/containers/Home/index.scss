@@ -9,11 +9,16 @@
 /***********   slider beginning************/
 .rec .rec-item-wrapper { 
   @include mobile { 
-    width: 70vw !important;
+    width: 65vw !important;
+    margin: 22px
   }
-  @include iPads { 
-      width: 270px !important;
-      margin: 20px;
+
+  @include iPhoneX { 
+      width: 100% !important;
+  }
+
+  @include iPads{
+    width: 26vmax !important;
   }
   
 }
@@ -67,6 +72,9 @@
     right: 0;
     @include iPadPro{
         right: -9px;
+    }
+    @include mobile { 
+        right: -15px;
     }
 }
 .rec.rec-arrow-left{

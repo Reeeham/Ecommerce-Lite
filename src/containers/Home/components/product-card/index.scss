@@ -11,9 +11,15 @@
   position: relative;
   height: 377px;
   flex: 1;
-  margin: 0 0.7rem 0.7rem 0 !important;
+  margin: 0 0.8rem 0.7rem 0 !important;
   @include iPadPro {
     margin: 0 1rem 0.7rem 0.9rem !important;
+
+  }
+}
+.product-card:last-child{
+  @include iPadPro{ 
+    margin-right: 0 !important;
 
   }
 }
