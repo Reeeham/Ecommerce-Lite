@@ -90,5 +90,8 @@
   }
 }
 .rec .rec-pagination {
-margin-top: 5px !important;
+    @include mobile{
+        margin-top: 5px !important;
+
+    }
 }
