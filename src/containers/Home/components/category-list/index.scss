@@ -1,4 +1,6 @@
 @import '/public/css/colors';
+@import "/public/css/variables";
+@import "/public/css/mixins";
 
 .category-list {
     margin-bottom: 3rem;
@@ -12,6 +14,9 @@
     margin-top: 4rem;
     height: 190px;
     width:83%;
+    @include mobile { 
+        width: 100%;
+    }
 }
 
 .category-title{
@@ -33,7 +38,12 @@
     height: 2.5rem;
     border-radius: .5em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-
+    @include mobile {
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: 7rem;
+        height: 2rem;
+    }
 }
 
 .category-img{

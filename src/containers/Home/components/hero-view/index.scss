@@ -1,5 +1,6 @@
 @import '/public/css/colors';
-
+@import "/public/css/variables";
+@import "/public/css/mixins";
 .content {
   flex-basis: 40vmax;
   div {
@@ -14,6 +15,10 @@
   color: color(green-light);
   font-size: smaller;
   text-transform: uppercase;
+  @include mobile { 
+    font-size : 0.65rem;
+    font-weight: 700;
+  }
 }
 .kitchen-text {
   color: white;
@@ -23,10 +28,17 @@
   font-family: sans-serif;
   margin: 0;
   margin-bottom: 1.3rem;
+  @include mobile { 
+    font-size: 1.5rem;
+  }
 }
 .commodo-text {
   color: white;
   max-width: 53%;
+  @include mobile { 
+    max-width: 100%;
+    font-size: 0.7rem;
+  }
 }
 
 .browse-btn {
@@ -37,10 +49,17 @@
   display: inline-block;
   margin-bottom: 20%;
   margin-top: 40px;
+  @include mobile{ 
+    padding: 0.7rem;
+  }
 }
 .bg-img img {
   max-width: 50vmax;
   max-height: 30vmax;
+  @include mobile { 
+    width: 100%;
+    margin-top: 0;
+  }
   margin-top: 20px;
 }
 .border-text {
@@ -59,6 +78,10 @@
   color: white;
   margin-left: 10px;
   font-family: sans-serif;
+  @include mobile { 
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
 }
 .right-icon {
   margin-left: 15px;

@@ -12,7 +12,7 @@ export const ProductCard = (props) => {
    const stockCountColor = (countValue) => {
         return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
     }
-     return(<div className="product-card" maxWidth="100%" minWidth="100%">
+     return(<div className="product-card">
      <div className="buttons">
          <div className="save-button">
              <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
