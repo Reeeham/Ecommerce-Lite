@@ -1,86 +1,98 @@
-@import '/public/css/colors';
+@import "/public/css/colors";
 @import "/public/css/variables";
 @import "/public/css/mixins";
 
-.hero-view{
-    background: color(primary-darker) !important;
+.hero-view {
+  background: color(primary-darker) !important;
 }
 
 /***********   slider beginning************/
-.rec .rec-item-wrapper { 
-  @include mobile { 
+.rec .rec-item-wrapper {
+  @include mobile {
     width: 65vw !important;
-    margin: 22px
+    margin-right: 1.4rem;
+    margin-left: 1.4rem;
   }
 
-  @include iPhoneX { 
-      width: 100% !important;
+  @include iPhoneX {
+    width: 100% !important;
   }
 
-  @include iPads{
+  @include iPads {
     width: 26vmax !important;
   }
-  
 }
-.rec .rec-carousel-item { 
-    @include mobile { 
-      width: 100% !important;
-    }
+.rec .rec-carousel-item {
+  @include mobile {
+    width: 100% !important;
   }
+}
 
-.rec .rec-slider-container{
-    margin: 0;
+.rec .rec-slider-container {
+  margin: 0;
 }
 
 .rec .rec-dot {
-    border: none;
-    background-color: #d4d3d3;
-    box-shadow: none;
-    width: 0.3rem;
-    height: 0.3rem;
-    margin-top: 0.5rem;
+  border: none;
+  background-color: #d4d3d3;
+  box-shadow: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.5rem;
+ 
 }
 
-.rec .rec-dot_active, .rec .rec-dot_active:hover , .rec .rec-dot_active:focus { 
-    background:color(primary-dark);
-    box-shadow: unset;
+.rec .rec-dot_active,
+.rec .rec-dot_active:hover,
+.rec .rec-dot_active:focus {
+  background: color(primary-dark);
+  box-shadow: unset;
 }
 
 .rec.rec-arrow {
-    background: white;
-    border: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    position: absolute;
-    top: 45%;
-    height: 1.9rem;
-    width: 1.9rem;
-    min-width: 1.9rem;
-    line-height: unset;
-    font-size: 1em;
-    text-align: center;
-    color: #717076;
+  background: white;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: 45%;
+  height: 1.9rem;
+  width: 1.9rem;
+  min-width: 1.9rem;
+  line-height: unset;
+  font-size: 1em;
+  text-align: center;
+  color: #717076;
 }
-.rec.rec-arrow:hover,.rec.rec-arrow.rec-arrow-right:hover, .rec.rec-arrow.rec-arrow-left:hover{
-    background: color(grey);
+.rec.rec-arrow:hover,
+.rec.rec-arrow.rec-arrow-right:hover,
+.rec.rec-arrow.rec-arrow-left:hover {
+  background: color(grey);
 }
 
-.rec.rec-arrow:focus,.rec.rec-arrow.rec-arrow-right:focus, .rec.rec-arrow.rec-arrow-left:focus{
-    background:color(primary-dark);
+.rec.rec-arrow:focus,
+.rec.rec-arrow.rec-arrow-right:focus,
+.rec.rec-arrow.rec-arrow-left:focus {
+  background: color(primary-dark);
+}
+.rec.rec-arrow-right {
+  right: 0;
+  @include iPadPro {
+    right: -9px;
+  }
+  @include mobile {
+    right: -15px;
+  }
+}
+.rec.rec-arrow-left {
+  left: 0;
+  z-index: 1000;
+  @include iPadPro {
+    left: -13px;
+  }
+}
+.rec .rec-pagination {
+    @include mobile{
+        margin-top: 5px !important;
 
-}
-.rec.rec-arrow-right{
-    right: 0;
-    @include iPadPro{
-        right: -9px;
-    }
-    @include mobile { 
-        right: -15px;
-    }
-}
-.rec.rec-arrow-left{
-    left: 0;
-    z-index: 1000;
-    @include iPadPro{
-        left: -13px;
     }
 }
