@@ -1,0 +1,35 @@
+
+
+.nav-list a{
+    display: block;
+    color: #eee;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 650ms;
+}
+.nav-list a:hover{
+    color: black;
+}
+.sub-menu{
+   // width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.nav-list li:hover > .sub-menu{
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+}
+
+
+.sub-menu li {
+    line-height: 3rem;
+}
