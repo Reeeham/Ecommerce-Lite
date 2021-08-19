@@ -1,18 +1,22 @@
+@import '/public/css/colors';
+@import '/public/css/variables';
 
-
+.sub-menu{
+       width: 20rem;
+       margin: auto;
+}
 .nav-list a{
     display: block;
-    color: #eee;
+    color: color(dark-grey);
     padding: 0 1.5rem;
     font-size: 1rem;
-    text-transform: uppercase;
-    transition: color 650ms;
+    text-transform: capitalize;
+    transition: color 30ms;
 }
 .nav-list a:hover{
     color: black;
 }
 .sub-menu{
-   // width: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,4 +36,16 @@
 
 .sub-menu li {
     line-height: 3rem;
+}
+
+.num{ 
+    background: white;
+    color: black;
+    margin-left: 0.5em;
+    text-align: center;
+    width: 21px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
 }
