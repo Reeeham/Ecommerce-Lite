@@ -1,41 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faAngleDown,
-    faBox,
-    faSearch,
-    faShoppingCart,
-} from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import './Header.scss';
 import Navbar from '../Navbar';
+import DesktopNavbar from '../DesktopNavbar';
+import { faBox } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
-    const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
-    const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
-    const [countriesDropdownOpen, setCountriesDropdownOpen] = useState(false);
-    // const [showNav, setShowNav] = useState(true);
-    const [selectedCountryImgPath, setSelectedCountryImgPath] = useState('./../../images/countries-icons/united-states.svg');
-    const toggleCategoriesDropDownBtn = () => setCategoriesDropdownOpen(!categoriesDropdownOpen);
-    const toggleAccountDropDownBtn = () => setAccountDropdownOpen(!accountDropdownOpen);
-    const toggleCountriesDropDownBtn = () => setCountriesDropdownOpen(!countriesDropdownOpen);
-    const handleCountryChange = (name) => { setSelectedCountryImgPath(name) }
-    // const toggleNav = () => {
-    //     setShowNav(!showNav);
-    //     let firstHeader = document.querySelector('.main-container .first-header');
-    //     let secondHeader = document.querySelector('.main-container .second-header');
-    //     if(showNav) { 
-    //         firstHeader.style.display = "flex";
-    //         secondHeader.style.display = "flex";
-    //     }else { 
-    //         firstHeader.style.display = "none";
-    //         secondHeader.style.display = "none"
-    //     }
-    // }
+    const [width, setWidth] = useState(window.innerWidth);
+
+   useEffect(()=> { 
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+   },[width]);
+
     return (
         <>
-          
-            {/* <Link href="#" id="toggle" onClick={toggleNav}><span></span></Link>  */}
             <nav className="main-container first-header">
                 <ul className="container">
                     <li className="free-shipping-text">
@@ -48,7 +26,8 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-           <Navbar />
+            {width > 812 || width > 767  ? <DesktopNavbar/> :   <Navbar /> }
+         
         </>
 
     );
