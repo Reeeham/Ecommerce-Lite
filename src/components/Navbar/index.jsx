@@ -1,13 +1,20 @@
 import DesktopNavbar from "../DesktopNavbar"
 import MobileNavbar from "../MobileNavbar"
+import React, { useEffect, useState } from 'react';
 
 
-const Navbar = () => { 
+const Navbar = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => setWidth(window.innerWidth));
+    }, [width]);
+
     return (
-    <>
-    {/* <DesktopNavbar /> */}
-    <MobileNavbar />
-    </>);
+        <>
+            {width > 812 || width > 767 ? <DesktopNavbar /> : <MobileNavbar />}
+
+        </>);
 }
 
 export default Navbar;

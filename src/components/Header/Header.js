@@ -6,11 +6,7 @@ import DesktopNavbar from '../DesktopNavbar';
 import { faBox } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-
-   useEffect(()=> { 
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
-   },[width]);
+   
 
     return (
         <>
@@ -26,8 +22,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            {width > 812 || width > 767  ? <DesktopNavbar/> :   <Navbar /> }
-         
+            <Navbar />
         </>
 
     );
