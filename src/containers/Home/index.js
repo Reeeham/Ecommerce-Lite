@@ -9,6 +9,7 @@ import { categoryList } from './services/categoryList';
 import { discountList } from './services/discountList';
 import { heroView } from './services/heroView';
 import { promotionsList } from './services/promotionsList';
+import { SortByCategoryList } from './components/sort-by-category';
 
 const Home = () => {
   const [heroViewData, setHeroViewData] = useState({});

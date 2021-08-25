@@ -15,7 +15,7 @@
           "id": 1,
           "title": "Fashion",
           "description": "Commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Fashion",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/Shoe.JPG",
           "alt_value": "Shoes"
         },
@@ -23,7 +23,7 @@
           "id": 2,
           "title": "Electronics",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Electronics",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/headphone.JPG",
           "alt_value": "headphone"
         },
@@ -31,7 +31,7 @@
           "id": 3,
           "title": "Furniture",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Furniture",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/chair.jpg",
           "alt_value": "chair"
         },
@@ -39,7 +39,7 @@
           "id": 4,
           "title": "Beauty products",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/BeautyProducts",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/cosmetic.png",
           "alt_value": "Beauty"
         },
@@ -47,7 +47,7 @@
           "id": 5,
           "title": "Kitchen",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Kitchen",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/kitchen.png",
           "alt_value": "Kitchen"
         },
@@ -55,7 +55,7 @@
           "id": 6,
           "title": "Toys",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Toys",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/Toys.png",
           "alt_value": "Toys"
         },
@@ -63,7 +63,7 @@
           "id": 7,
           "title": "Jewelry",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Jewelry",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/ring.png",
           "alt_value": "ring"
         },
@@ -71,7 +71,7 @@
           "id": 8,
           "title": "Perfumes",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Perfumes",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/Perfumes.png",
           "alt_value": "Perfume"
         },
@@ -79,7 +79,7 @@
           "id": 9,
           "title": "Books",
           "description": "commodo dolor sit amet cum diceam est un partuient",
-          "action_link": "/Books",
+          "action_link": "/products-by-category",
           "image": "./../../images/categories/Books.png",
           "alt_value": "Books"
         }

@@ -6,12 +6,13 @@ import { ProgressBarLine } from "react-progressbar-line";
 import { Link } from "react-router-dom"
 import './index.scss'
 
+export const stockCountColor = (countValue) => {
+    return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
+}
 export const ProductCard = (props) => { 
     
     const {product} = props;
-   const stockCountColor = (countValue) => {
-        return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
-    }
+
      return(<div className="product-card">
      <div className="buttons">
          <div className="save-button">
