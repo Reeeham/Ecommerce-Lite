@@ -1,0 +1,44 @@
+.pagination-wrapper{ 
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.pagination{
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    
+    li{
+      display: inline;
+      text-align: center;
+    }
+    a{
+      float: left;
+      display: block;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 5px 12px;
+      color:#fff;
+      margin-left: -1px;
+      border:1px solid transparent;
+      line-height: 1.5;
+      &.active{  cursor: default;}
+      &:active{ outline: none;}
+    }
+  }
+  .modal-1{
+  
+    a{
+      border-color:#ddd; 
+      color:#4285F4;
+      background:#fff;
+      &:hover{
+        background:#eee;
+      }
+      &.active, &:active{
+        border-color: #4285F4;
+        background:#4285F4;
+        color:#fff;
+      }
+    } 
+  }

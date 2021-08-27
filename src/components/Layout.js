@@ -11,8 +11,7 @@ const Layout = () => {
     return (
         <div className="main-container">
             <Header />
-            <Route path=""  component={Content} />
-            <Route path="/products-by-category" component={ProductsByCategory} />
+            <Content />
             <Footer />
         </div>
     )

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { ProgressBarLine } from 'react-progressbar-line';
 import { Link, withRouter } from 'react-router-dom';
 import { discountList } from '../../services/discountList';
+import { Pagination } from '../pagination';
 import { stockCountColor } from '../product-card';
 import './index.scss';
 
@@ -97,8 +98,10 @@ import './index.scss';
                             </div>)
                     })}
                 </div>
-
+            </div>
+            <div className="container">
+            <Pagination />
             </div>
         </>);
 }
-export default withRouter(ProductsByCategory);
+export default ProductsByCategory;

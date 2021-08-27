@@ -1,9 +1,17 @@
 import React from 'react'
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Home from '../containers/Home';
-
-const Content = () =>{
+import ProductsByCategory from '.././containers/Home/components/sort-by-category/index'
+const Content = () => {
     return (
-        <Home/>
+        <>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/products-by-category" component={ProductsByCategory} />
+                <Redirect to="/"/>
+            </Switch>
+
+        </>
     );
 }
 
