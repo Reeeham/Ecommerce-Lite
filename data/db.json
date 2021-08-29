@@ -97,7 +97,8 @@
         "rate_count": " (20)",
         "price": "2,899,99",
         "discount_price": "3,000,00",
-        "stock_count": "32"
+        "stock_count": "32",
+        "category_id" : 1
       },
       {
         "id": 2,
@@ -110,7 +111,8 @@
         "rate_count": " (293)",
         "price": "250",
         "discount_price": "260",
-        "stock_count": "4"
+        "stock_count": "4",
+        "category_id" : 1
       },
       {
         "id": 3,
@@ -123,7 +125,8 @@
         "rate_count": " (293)",
         "price": "125",
         "discount_price": "225",
-        "stock_count": "1"
+        "stock_count": "1",
+        "category_id" : 2
       },
       {
         "id": 4,
@@ -136,7 +139,8 @@
         "rate_count": " (1,290)",
         "price": "39.99",
         "discount_price": "59.99",
-        "stock_count": "10"
+        "stock_count": "10",
+        "category_id" : 2
       },
       {
         "id": 5,
@@ -149,7 +153,8 @@
         "rate_count": " (20)",
         "price": "2,899,99",
         "discount_price": "3,000,00",
-        "stock_count": "32"
+        "stock_count": "32",
+        "category_id" : 2
       },
       {
         "id": 6,
@@ -162,7 +167,8 @@
         "rate_count": " (293)",
         "price": "250",
         "discount_price": "260",
-        "stock_count": "4"
+        "stock_count": "4",
+        "category_id" : 3
       },
       {
         "id": 7,
@@ -175,7 +181,8 @@
         "rate_count": " (293)",
         "price": "125",
         "discount_price": "225",
-        "stock_count": "1"
+        "stock_count": "1",
+        "category_id" : 3
       },
       {
         "id": 8,
@@ -188,7 +195,8 @@
         "rate_count": " (1,290)",
         "price": "39.99",
         "discount_price": "59.99",
-        "stock_count": "10"
+        "stock_count": "10",
+        "category_id" : 4
       },
       {
         "id": 9,
@@ -201,7 +209,8 @@
         "rate_count": " (20)",
         "price": "2,899,99",
         "discount_price": "3,000,00",
-        "stock_count": "32"
+        "stock_count": "32",
+        "category_id" : 4
       },
       {
         "id": 10,
@@ -214,7 +223,8 @@
         "rate_count": " (293)",
         "price": "250",
         "discount_price": "260",
-        "stock_count": "4"
+        "stock_count": "4",
+        "category_id" : 5
       },
       {
         "id": 11,
@@ -227,7 +237,8 @@
         "rate_count": " (293)",
         "price": "125",
         "discount_price": "225",
-        "stock_count": "1"
+        "stock_count": "1",
+        "category_id" : 5
       },
       {
         "id": 12,
@@ -240,7 +251,8 @@
         "rate_count": " (1,290)",
         "price": "39.99",
         "discount_price": "59.99",
-        "stock_count": "10"
+        "stock_count": "10",
+        "category_id" : 5
       },
       {
         "id": 13,
@@ -253,7 +265,8 @@
         "rate_count": " (20)",
         "price": "2,899,99",
         "discount_price": "3,000,00",
-        "stock_count": "32"
+        "stock_count": "32",
+        "category_id" : 6
       },
       {
         "id": 14,
@@ -266,7 +279,8 @@
         "rate_count": " (293)",
         "price": "250",
         "discount_price": "260",
-        "stock_count": "4"
+        "stock_count": "4",
+        "category_id" : 6
       },
       {
         "id": 15,
@@ -279,7 +293,8 @@
         "rate_count": " (293)",
         "price": "125",
         "discount_price": "225",
-        "stock_count": "1"
+        "stock_count": "1",
+        "category_id" : 6
       },
       {
         "id": 16,
@@ -292,7 +307,8 @@
         "rate_count": " (1,290)",
         "price": "39.99",
         "discount_price": "59.99",
-        "stock_count": "10"
+        "stock_count": "10",
+        "category_id" : 7
       }
     ],
     "homePromotions":[

@@ -44,5 +44,6 @@ DiscountsList.propTypes = {
         price: PropTypes.string,
         discount_price: PropTypes.string,
         stock_count: PropTypes.string,
+        category_id : PropTypes.number 
     }])
 }

@@ -1,41 +1,82 @@
 
 
-import { faAngleDown, faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Rate from 'rc-rate';
 import { useEffect, useState } from 'react';
 import { ProgressBarLine } from 'react-progressbar-line';
-import { Link, withRouter } from 'react-router-dom';
-import { discountList } from '../../services/discountList';
+import { Link } from 'react-router-dom';
+import Loader from '../../../../components/Loader/Loader';
+import { categoryList } from '../../services/categoryList';
+import { allProducts, fetchProducts } from '../../services/discountList';
 import { Pagination } from '../pagination';
 import { stockCountColor } from '../product-card';
 import './index.scss';
 
 
- const ProductsByCategory = (props) => {
+const ProductsByCategory = (props) => {
     const [products, setProducts] = useState([]);
-    useEffect(() => {
-    discountList().then(res => {
-        setProducts(res.data);
-      }, (err) => {
-      })
-    }, [])
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [nextPageNumber, setNextPageNumber] = useState(1);
+    const [pageCount, setPageCount] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
+    const [selectedCategoryId, setSelectedCategoryId] = useState(0);
 
+
+    useEffect(() => {
+        getProductsByPage(nextPageNumber);
+        getAllProducts();
+        getCategoryList();
+    }, [])
+   const getProductsByPage = (number)  => { 
+      fetchProducts(number).then(res => {
+        setFilteredProducts(res.data);
+        setLoading(false);
+    });
+}
+
+    const getAllProducts = (number) => { 
+        allProducts().then(res => {
+            setProducts(res.data);
+            let count = Math.round(products.length / 5);
+            const arrCount = [];
+            for(let i=0; i < count; i++){
+                arrCount.push(i+1);
+            }
+            setPageCount(arrCount);
+        });
+    }
+
+    const getCategoryList = () => { 
+        categoryList().then(res => {
+            setCategories(res.data);
+            setLoading(false);
+        }, (err) => {
+        })
+    }
     return (
         <>
+            {loading && <Loader />}
             <div className="container">
                 <h5 className="tasks-header-num">Showing 291 tasks</h5>
                 <div className="filter-header">
-                    <div>Sort by: <Link to="" className="most-popular">Most Popular</Link>  <FontAwesomeIcon
-                        icon={faAngleDown}
-                        style={{ marginLeft: "0.3rem", fontSize: "smaller" }}
-                    />
+                    <div>Sort by:
+                        <select value={selectedCategoryId} onChange={(e) => {
+                            setSelectedCategoryId(e.target.value);
+                            const newProductsList = filteredProducts.filter(p => p.category_id == e.target.value);
+                            setFilteredProducts(newProductsList);
+                        }}>
+                            {categories.map((cat, i) => {
+                                return (<option key={i} value={cat.id}>{cat.title}</option>);
+                            })}
+                        </select>
                     </div>
                 </div>
             </div>
             <div className="container">
                 <div className="products-by-category">
-                    {products.map((product, i) => {
+                    {filteredProducts.map((product, i) => {
                         return (
                             <div key={i} className="product-cat-list-item">
                                 <div className="buttons">
@@ -100,7 +141,18 @@ import './index.scss';
                 </div>
             </div>
             <div className="container">
-            <Pagination />
+                {/* <Pagination /> */}
+                <div className="pagination-wrapper">
+                    <ul className="pagination modal-1">
+                        {nextPageNumber > 1 && <li><Link onClick={()=> {getProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
+                        
+                        { pageCount.map((li,i) => {
+                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getProductsByPage(li); setNextPageNumber(li) }}>{li}</Link></li>)
+                             })
+                        }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
+                    </ul>
+                </div>
             </div>
         </>);
 }

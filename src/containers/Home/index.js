@@ -6,10 +6,9 @@ import HeroView from './components/hero-view';
 import './index.scss';
 import PromotionsList from './components/promotions-list';
 import { categoryList } from './services/categoryList';
-import { discountList } from './services/discountList';
+import { allProducts } from './services/discountList';
 import { heroView } from './services/heroView';
 import { promotionsList } from './services/promotionsList';
-import { SortByCategoryList } from './components/sort-by-category';
 
 const Home = () => {
   const [heroViewData, setHeroViewData] = useState({});
@@ -32,14 +31,13 @@ const Home = () => {
     }, (err) => {
     })
 
-    discountList().then(res => {
+    allProducts().then(res => {
       setDiscounts(res.data);
       setLoading(false);
     }, (err) => {
     })
     promotionsList().then(res => {
       setPromotions(res.data);
-    
       setLoading(false);
     }, (err) => {}
     )

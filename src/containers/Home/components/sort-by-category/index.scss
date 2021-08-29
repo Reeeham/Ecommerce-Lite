@@ -9,16 +9,11 @@
     font-weight: 600;
     font-size: .9rem;
 }
-.most-popular { 
-    color: color(light-blue);
-    text-decoration: underline;
-
-}
 .products-by-category { 
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    //justify-content: space-between;
 }
 .product-cat-list-item{ 
     margin-bottom: 1rem;
@@ -30,7 +25,12 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    margin-right: 2rem
+     
 }
 .product-cat-list-item:last-child { 
     margin-right: 0;
+}
+.active { 
+    background: cornflowerblue;
 }
