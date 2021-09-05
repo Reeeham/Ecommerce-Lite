@@ -16,7 +16,7 @@ import './index.scss';
 
 const ProductsByCategory = (props) => {
     const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
+    //const [filteredProducts, setFilteredProducts] = useState([]);
     const [nextPageNumber, setNextPageNumber] = useState(1);
     const [pageCount, setPageCount] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,19 +25,12 @@ const ProductsByCategory = (props) => {
 
 
     useEffect(() => {
-        getProductsByPage(nextPageNumber);
-        getAllProducts();
+        getAllProducts(nextPageNumber);
         getCategoryList();
     }, [])
-   const getProductsByPage = (number)  => { 
-      fetchProducts(number).then(res => {
-        setFilteredProducts(res.data);
-        setLoading(false);
-    });
-}
 
     const getAllProducts = (number) => { 
-        allProducts().then(res => {
+        fetchProducts(number).then(res => {
             setProducts(res.data);
             let count = Math.round(products.length / 5);
             const arrCount = [];
@@ -45,6 +38,7 @@ const ProductsByCategory = (props) => {
                 arrCount.push(i+1);
             }
             setPageCount(arrCount);
+            setLoading(false);
         });
     }
 
@@ -62,11 +56,8 @@ const ProductsByCategory = (props) => {
                 <h5 className="tasks-header-num">Showing 291 tasks</h5>
                 <div className="filter-header">
                     <div>Sort by:
-                        <select value={selectedCategoryId} onChange={(e) => {
-                            setSelectedCategoryId(e.target.value);
-                            const newProductsList = filteredProducts.filter(p => p.category_id == e.target.value);
-                            setFilteredProducts(newProductsList);
-                        }}>
+                        <select value={selectedCategoryId} onChange={(e) => { setSelectedCategoryId(e.target.value); }}>
+                            <option>Choose Category</option>
                             {categories.map((cat, i) => {
                                 return (<option key={i} value={cat.id}>{cat.title}</option>);
                             })}
@@ -76,7 +67,7 @@ const ProductsByCategory = (props) => {
             </div>
             <div className="container">
                 <div className="products-by-category">
-                    {filteredProducts.map((product, i) => {
+                    {products.filter(e=> selectedCategoryId !== 0 ?  e.category_id == selectedCategoryId : true).map((product, i) => {
                         return (
                             <div key={i} className="product-cat-list-item">
                                 <div className="buttons">
@@ -144,13 +135,13 @@ const ProductsByCategory = (props) => {
                 {/* <Pagination /> */}
                 <div className="pagination-wrapper">
                     <ul className="pagination modal-1">
-                        {nextPageNumber > 1 && <li><Link onClick={()=> {getProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
+                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProducts(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
                         
                         { pageCount.map((li,i) => {
-                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getProductsByPage(li); setNextPageNumber(li) }}>{li}</Link></li>)
+                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProducts(li); setNextPageNumber(li) }}>{li}</Link></li>)
                              })
                         }
-                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProducts(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
                     </ul>
                 </div>
             </div>
