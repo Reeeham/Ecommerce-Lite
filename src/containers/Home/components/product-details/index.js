@@ -5,7 +5,15 @@ export const ProductDetails = () => {
     return (<div className="container">
 
         <div className="product-details">
-            <div className="bread-crumbs"></div>
+            <div className="bread-crumbs">
+                <ul>
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Clothing</li>
+                    <li>Hoodies</li>
+                    <li>Happy Ninja</li>
+                </ul>
+            </div>
             <div className="photo-gallery"></div>
             <div className="title"></div>
             <div className="reviews"></div>

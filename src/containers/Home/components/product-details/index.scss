@@ -1,2 +1,19 @@
 
+@import "/public/css/colors";
+@import "/public/css/variables";
+@import "/public/css/mixins";
 
+.bread-crumbs  {
+    color: color(dark-grey);
+   
+  ul {
+    display: flex;
+    li::after {
+        content: '/'+'\0000a0';
+    
+    }
+    li:last-child:after {
+         content: '';
+        }
+   }
+}
