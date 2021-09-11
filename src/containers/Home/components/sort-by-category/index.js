@@ -16,7 +16,6 @@ import './index.scss';
 
 const ProductsByCategory = (props) => {
     const [products, setProducts] = useState([]);
-    //const [filteredProducts, setFilteredProducts] = useState([]);
     const [nextPageNumber, setNextPageNumber] = useState(1);
     const [pageCount, setPageCount] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,19 +24,25 @@ const ProductsByCategory = (props) => {
 
 
     useEffect(() => {
-        getAllProducts(nextPageNumber);
+        getAllProductsByPage(nextPageNumber);
+        getCount();
         getCategoryList();
     }, [])
 
-    const getAllProducts = (number) => { 
-        fetchProducts(number).then(res => {
-            setProducts(res.data);
-            let count = Math.round(products.length / 5);
+    const getCount = () => {
+        allProducts().then(res => { 
+            let count = Math.round(res.data.length / 5);
             const arrCount = [];
             for(let i=0; i < count; i++){
                 arrCount.push(i+1);
             }
             setPageCount(arrCount);
+        })
+       
+    }
+    const getAllProductsByPage = (number) => { 
+        fetchProducts(number).then(res => {
+            setProducts(res.data);
             setLoading(false);
         });
     }
@@ -135,13 +140,13 @@ const ProductsByCategory = (props) => {
                 {/* <Pagination /> */}
                 <div className="pagination-wrapper">
                     <ul className="pagination modal-1">
-                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProducts(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
+                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
                         
                         { pageCount.map((li,i) => {
-                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProducts(li); setNextPageNumber(li) }}>{li}</Link></li>)
+                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProductsByPage(li); setNextPageNumber(li) }}>{li}</Link></li>)
                              })
                         }
-                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProducts(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
                     </ul>
                 </div>
             </div>
