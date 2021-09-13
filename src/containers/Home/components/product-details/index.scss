@@ -2,12 +2,20 @@
 @import "/public/css/colors";
 @import "/public/css/variables";
 @import "/public/css/mixins";
-
+.product-details{
+  width: 100%;
+}
 .bread-crumbs  {
     color: color(dark-grey);
    
   ul {
     display: flex;
+    li{
+      text-decoration: underline;
+    }
+    li:last-child{ 
+      text-decoration: none;
+    }
     li::after {
         content: '/'+'\0000a0';
     
@@ -16,4 +24,30 @@
          content: '';
         }
    }
+}
+.product-details-body{
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  .photo-gallery{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    margin-bottom: 1rem;
+    .first-img {  
+      img{
+        width: 100%;
+      }
+    }
+    .other-images{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      img{
+        width: calc((100% / 3) - 1rem);
+        margin-top: 1rem;
+      }
+    }
+  }
 }
