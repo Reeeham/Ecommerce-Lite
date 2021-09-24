@@ -5,6 +5,7 @@ import Rate from "rc-rate";
 import { ProgressBarLine } from "react-progressbar-line";
 import { Link } from "react-router-dom"
 import './index.scss'
+import { Reviews } from '../reviews';
 
 export const stockCountColor = (countValue) => {
     return countValue >= 5 ? 'hsl(143deg 65% 55%)' : countValue > 1 && countValue <= 5 ? 'orange' : 'pink';
@@ -35,13 +36,8 @@ export const ProductCard = (props) => {
          <div className="product-header">
              <div className="brand-name">{product.brand}</div>
              <div className="product-title">{product.title}</div>
-             <div className="rate">
-                 <Rate className="rate-stars" size="10" style={{ fontSize: '1em' }} disabled={true} value={product.rate} allowHalf={true} />
-                 <div className="rate-values">
-                     <div className="rate-stars-value">{product.rate}</div>
-                     <div className="rate-count"> {product.rate_count}</div>
-                 </div>
-             </div>
+             <Reviews rate={product.rate} rateCount={product.rate_count} />
+             
          </div>
          <div className="product-footer">
              <div className="price">

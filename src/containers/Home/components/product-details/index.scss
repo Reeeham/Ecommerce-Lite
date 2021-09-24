@@ -3,9 +3,9 @@
 @import "/public/css/variables";
 @import "/public/css/mixins";
 .product-details{
-  width: 100%;
-}
-.bread-crumbs  {
+  width:70%;
+  margin-bottom: 1rem;
+  .bread-crumbs  {
     color: color(dark-grey);
    
   ul {
@@ -17,37 +17,95 @@
       text-decoration: none;
     }
     li::after {
+      display:inline-block;
         content: '/'+'\0000a0';
-    
+        text-decoration: none;
+        margin-right: .3rem;
+
     }
     li:last-child:after {
          content: '';
         }
    }
 }
-.product-details-body{
+.product-details-header{
   display: flex;
-  justify-content: space-between;
   width:100%;
-  .photo-gallery{
+}
+
+  .product-details-body{
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 50%;
-    margin-bottom: 1rem;
-    .first-img {  
-      img{
-        width: 100%;
-      }
-    }
-    .other-images{
+    justify-content: space-between;
+    gap: 10px 20px;
+    .photo-gallery{
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      flex-wrap: wrap;
-      img{
-        width: calc((100% / 3) - 1rem);
-        margin-top: 1rem;
+      flex: 2;
+      height: 100%;
+      .first-img {  
+        img{
+          width: 100%;
+          height: 100%;
+  
+        }
+      }
+      .other-images{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 11px 24px;
+        img{
+          width: calc((100% / 3) - 1rem);
+          height: 100%;
+          margin-top: 1rem;
+        }
+      }
+     
+    }
+    .title-and-desc{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 3;
+      .description{
+        //width: 400px;
+      }
+      .color { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+        //margin-top: .5rem;
+      }
+      .color-options { 
+      }
+      .clear-selection { 
+        text-align: center;
+        text-decoration: underline;
+        color: color(primary-darker);
+        //margin-top: .5rem;
+      
+      }
+      .qauntity{ 
+        width: 3rem;
+        text-align: center;
+        height: 1.63rem;
+      }
+      .add-to-cart { 
+        //margin-top: .5rem;
+        button {
+          color: color(light-grey);
+          background: rgb(172, 73, 142);
+          text-align: center;
+          height: 2rem;
+          width: 8rem;
+          border-radius: 0.2rem;
+          margin-left: 0.3rem;
+        }
+        
       }
     }
   }
+
 }
+
+

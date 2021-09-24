@@ -1,0 +1,29 @@
+@import "/public/css/colors";
+@import "/public/css/variables";
+@import "/public/css/mixins";
+
+.rate {
+    display: flex;
+    font-size: 1.1rem;
+    @include iPadPro{
+      font-size: 0.8rem;
+      padding: 0.2rem;
+    }
+    .rate-stars {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .rate-values {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      .rate-stars-value {
+        font-weight: 900;
+        color: color(title-color);
+      }
+      .rate-count {
+        font-weight: 500;
+      }
+    }
+  }
