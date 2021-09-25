@@ -3,7 +3,7 @@ import { Reviews } from '../reviews';
 import './index.scss'
 
 export const ProductDetails = () => {
-    return (<div className="container">
+    return (<div className="container product-details-wrapper">
         <div className="product-details">
             <div className="product-details-header">
                 <div className="bread-crumbs">
@@ -52,7 +52,7 @@ export const ProductDetails = () => {
                         <input value="1" className="qauntity"></input>
                         <button>Add to cart</button>
                     </div>
-                    <div className="nav-tabs"></div>
+                    {/* <div className="nav-tabs"></div> */}
                 </div>
 
             </div>
