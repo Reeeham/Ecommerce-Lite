@@ -9,12 +9,16 @@ import { Link } from 'react-router-dom';
 import Loader from '../../../../components/Loader/Loader';
 import { categoryList } from '../../services/categoryList';
 import { allProducts, fetchProducts } from '../../services/discountList';
-import { Pagination } from '../pagination';
+// import { Pagination } from '../pagination';
 import { stockCountColor } from '../product-card';
+import ProductDetails from '../product-details';
 import './index.scss';
 
 
 const ProductsByCategory = (props) => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const [products, setProducts] = useState([]);
     const [nextPageNumber, setNextPageNumber] = useState(1);
     const [pageCount, setPageCount] = useState([]);
@@ -74,7 +78,7 @@ const ProductsByCategory = (props) => {
                 <div className="products-by-category">
                     {products.filter(e=> selectedCategoryId !== 0 ?  e.category_id == selectedCategoryId : true).map((product, i) => {
                         return (
-                            <div key={i} className="product-cat-list-item">
+                            <div key={i} className="product-cat-list-item" onClick={handleShow}>
                                 <div className="buttons">
                                     <div className="save-button">
                                         <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
@@ -136,6 +140,7 @@ const ProductsByCategory = (props) => {
                     })}
                 </div>
             </div>
+            <ProductDetails show={show} handleClose={handleClose} />
             <div className="container">
                 {/* <Pagination /> */}
                 <div className="pagination-wrapper">
