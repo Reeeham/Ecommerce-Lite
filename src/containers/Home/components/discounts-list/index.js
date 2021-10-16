@@ -30,7 +30,9 @@ const DiscountsList = (props) => {
 }
 
 export default DiscountsList
-
+DiscountsList.propTypes = { 
+    discounts: PropTypes.array
+}
 DiscountsList.defaultProps  = {
     discounts: [{
         id: PropTypes.number,

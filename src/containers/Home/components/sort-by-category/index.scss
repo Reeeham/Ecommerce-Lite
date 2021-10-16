@@ -1,85 +1,93 @@
-@import '/public/css/colors';
+@import "/public/css/colors";
+@import "/public/css/variables";
+@import "/public/css/mixins";
 
-.filter-header { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.tasks-header-num { 
-    font-weight: 600;
-    font-size: .9rem;
+.tasks-header-num {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
-.products-by-category { 
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    //justify-content: space-between;
+.products-by-category {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  grid-column-gap: 1rem;
 }
-.product-cat-list-item{ 
-    margin-bottom: 1rem;
-    position: relative;
-    box-shadow: 6px 4px 11px 0px #d2c9c975;
-    border-radius: 0.6rem;
-    width: calc(100% / 3 - 2rem) ;
-    height: 330px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-right: 2rem;
-    cursor:pointer
-     
+.product-cat-list-item {
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 6px 4px 11px 0px #d2c9c975;
+  border-radius: 0.6rem;
+  width: calc(100% / 3 - 0.7rem);
+  height: 330px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+  @include mobile {
+   width: unset;
+  }
+  @include iPads { 
+    width: calc(100% / 2 - 0.6rem);
+  }
 }
-.product-cat-list-item:last-child { 
-    margin-right: 0;
+.product-cat-list-item:last-child {
+  margin-right: 0;
 }
-.active { 
-    background: cornflowerblue;
+.active {
+  background: cornflowerblue;
 }
-
-
 
 /**    pagination  **/
-.pagination-wrapper{ 
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+.pagination-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+
+  li {
+    display: inline;
+    text-align: center;
   }
-  .pagination{
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
-      
-      li{
-        display: inline;
-        text-align: center;
-      }
-      a{
-        float: left;
-        display: block;
-        font-size: 14px;
-        text-decoration: none;
-        padding: 5px 12px;
-        color:#fff;
-        margin-left: -1px;
-        border:1px solid transparent;
-        line-height: 1.5;
-        &.active{  cursor: default;}
-        &:active{ outline: none;}
-      }
+  a {
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+    color: #fff;
+    margin-left: -1px;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    &.active {
+      cursor: default;
     }
-    .modal-1{
-    
-      a{
-        border-color:#ddd; 
-        color:#4285F4;
-        background:#fff;
-        &:hover{
-          background:#eee;
-        }
-        &.active, &:active{
-          border-color: #4285F4;
-          background:#4285F4;
-          color:#fff;
-        }
-      } 
+    &:active {
+      outline: none;
     }
+  }
+}
+.modal-1 {
+  a {
+    border-color: #ddd;
+    color: #4285f4;
+    background: #fff;
+    &:hover {
+      background: #eee;
+    }
+    &.active,
+    &:active {
+      border-color: #4285f4;
+      background: #4285f4;
+      color: #fff;
+    }
+  }
+}

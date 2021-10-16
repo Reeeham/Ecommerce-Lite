@@ -5,7 +5,9 @@
 .hero-view {
   background: color(primary-darker) !important;
 }
-
+img {
+  max-width: 100%;
+}
 /***********   slider beginning************/
 .rec .rec-item-wrapper {
   @include mobile {

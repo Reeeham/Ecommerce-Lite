@@ -16,7 +16,7 @@ const Navbar = () => {
 
     return (
         <>
-            {width > 812 || width > 767 ? <DesktopNavbar /> : <MobileNavbar />}
+            {width > 812 || width >= 540 ? <DesktopNavbar /> : <MobileNavbar />}
 
         </>);
 }

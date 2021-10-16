@@ -35,7 +35,7 @@ const ProductsByCategory = (props) => {
 
     const getCount = () => {
         allProducts().then(res => { 
-            let count = Math.round(res.data.length / 5);
+            let count = Math.ceil(res.data.length / 5);
             const arrCount = [];
             for(let i=0; i < count; i++){
                 arrCount.push(i+1);
@@ -46,6 +46,7 @@ const ProductsByCategory = (props) => {
     }
     const getAllProductsByPage = (number) => { 
         fetchProducts(number).then(res => {
+            console.log('count', res.data.length)
             setProducts(res.data);
             setLoading(false);
         });
@@ -62,9 +63,9 @@ const ProductsByCategory = (props) => {
         <>
             {loading && <Loader />}
             <div className="container">
-                <h5 className="tasks-header-num">Showing 291 tasks</h5>
+                <h5 className="tasks-header-num">Showing {products.length} tasks</h5>
                 <div className="filter-header">
-                    <div>Sort by:
+                    <div> Sort by:
                         <select value={selectedCategoryId} onChange={(e) => { setSelectedCategoryId(e.target.value); }}>
                             <option>Choose Category</option>
                             {categories.map((cat, i) => {

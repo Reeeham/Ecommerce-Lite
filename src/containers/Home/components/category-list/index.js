@@ -36,7 +36,9 @@ const CategoryList = (props) => {
 }
 
 export default CategoryList;
-
+CategoryList.propTypes = { 
+    categories: PropTypes.array
+}
 CategoryList.defaultProps = {
     categories: [{
         id: PropTypes.number,
