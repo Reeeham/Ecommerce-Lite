@@ -1,7 +1,6 @@
 import React from 'react'
 import { faBolt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Rate from "rc-rate";
 import { ProgressBarLine } from "react-progressbar-line";
 import { Link } from "react-router-dom"
 import './index.scss'

@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown,
-    faBox,
     faSearch,
     faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';

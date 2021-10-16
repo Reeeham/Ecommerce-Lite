@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faAngleDown,
-    faBox,
     faSearch,
     faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
@@ -43,7 +42,7 @@ const MobileNavbar = () => {
                                 style={{ marginLeft: "0.7rem" }}
                             />
                         </button>
-                        <ul class="sub-menu">
+                        <ul className="sub-menu">
                             <li><Link to="">Fashion</Link></li>
                             <li><Link to="">Furniture</Link></li>
                             <li><Link to="">Electronics</Link></li>
@@ -57,7 +56,7 @@ const MobileNavbar = () => {
                                 className="cursor"
                             />
                         </button>
-                        <ul class="sub-menu">
+                        <ul className="sub-menu">
                             <li><Link to="">Profile</Link></li>
                             <li><Link to="">Logout</Link></li>
                             <li><Link to="">any</Link></li>
@@ -76,7 +75,7 @@ const MobileNavbar = () => {
                                 className="cursor"
                             />
                         </button>
-                        <ul class="sub-menu">
+                        <ul className="sub-menu">
                             <li><Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
                                 <img
                                     className="country-img"

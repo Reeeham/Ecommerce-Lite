@@ -121,10 +121,11 @@
     font-size: 0.8rem;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
     @include mobile { 
-      width: 8.5em;
-      height: 2.5em;
-      padding-left: 0.3em;
-      padding-right: 0.3em;
+      width: 8.5rem;
+    height: 2.5rem;
+    margin-top: 0.1rem;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
     }
     @include iPads { 
       margin-top: 20px;;

@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 
 const CategoryList = (props) => {
     const { categories } = props;
+
     return (
         <div className="container category-list">
             <Carousel  itemPadding={[0,0,0, 0]} itemsToShow={3} outerSpacing={0}>
                 {categories.map((cat, i) => {
                     return (
-                        <div className="category-card" key={i} maxWidth="100%">
+                        <div className="category-card" key={i} maxwidth="100%">
                             <div className="category-content">
                                 <div>
                                     <h1 className="category-title">{cat.title}</h1>
@@ -34,7 +35,8 @@ const CategoryList = (props) => {
     );
 }
 
-export default CategoryList
+export default CategoryList;
+
 CategoryList.propTypes = {
     categories: PropTypes.shape([{
         id: PropTypes.number,

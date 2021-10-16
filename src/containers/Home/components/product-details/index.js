@@ -11,8 +11,8 @@ export const ProductDetails = (props) => {
 
     return (<>
     { show &&
-     <div id="demo-modal" class="modal">
-        <div class="modal-content">
+     <div id="demo-modal" className="modal">
+        <div className="modal-content">
             <div className="product-details">
                 <div className="product-details-header">
                     <div className="bread-crumbs">

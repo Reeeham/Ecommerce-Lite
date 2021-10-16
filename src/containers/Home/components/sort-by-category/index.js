@@ -31,7 +31,7 @@ const ProductsByCategory = (props) => {
         getAllProductsByPage(nextPageNumber);
         getCount();
         getCategoryList();
-    }, [])
+    }, [nextPageNumber])
 
     const getCount = () => {
         allProducts().then(res => { 
@@ -76,7 +76,7 @@ const ProductsByCategory = (props) => {
             </div>
             <div className="container">
                 <div className="products-by-category">
-                    {products.filter(e=> selectedCategoryId !== 0 ?  e.category_id == selectedCategoryId : true).map((product, i) => {
+                    {products.filter(e=> selectedCategoryId !== 0 ?  e.category_id === selectedCategoryId : true).map((product, i) => {
                         return (
                             <div key={i} className="product-cat-list-item" onClick={handleShow}>
                                 <div className="buttons">
@@ -151,7 +151,7 @@ const ProductsByCategory = (props) => {
                              return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProductsByPage(li); setNextPageNumber(li) }}>{li}</Link></li>)
                              })
                         }
-                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } class="next">&raquo;</Link></li> }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } className="next">&raquo;</Link></li> }
                     </ul>
                 </div>
             </div>

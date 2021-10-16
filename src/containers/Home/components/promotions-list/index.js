@@ -17,8 +17,8 @@ const PromotionsList = (props) => {
             </div>
             <div className="container m-5">
                 <div className="promotions-body">
-                    {promotions.map((p) => {
-                        return (<Promotion promotion={p} />)
+                    {promotions.map((p, i) => {
+                        return (<Promotion promotion={p} key={i} />)
                     })}
                 </div>
             </div>
