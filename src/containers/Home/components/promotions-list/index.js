@@ -12,7 +12,7 @@ const PromotionsList = (props) => {
             <div className="container">
                 <div className="promotions-header">
                     <h1 className="promotions-title">Active Promotions</h1>
-                    <Link to="" className="all-promotions-link">View All Promotions</Link>
+                    <Link to="/" className="all-promotions-link">View All Promotions</Link>
                 </div>
             </div>
             <div className="container m-5">

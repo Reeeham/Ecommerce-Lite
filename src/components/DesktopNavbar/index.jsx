@@ -39,9 +39,9 @@ const DesktopNavbar = () => {
 
                     {categoriesDropdownOpen &&
                         <div onMouseLeave={toggleCategoriesDropDownBtn} className="dropdown-content" onBlur={toggleCategoriesDropDownBtn}>
-                            <Link to="">Fashion</Link>
-                            <Link to="">Furniture</Link>
-                            <Link to="">Electronics</Link>
+                            <Link to="/">Fashion</Link>
+                            <Link to="/">Furniture</Link>
+                            <Link to="/">Electronics</Link>
                         </div>}
                 </div>
             </li>
@@ -56,9 +56,9 @@ const DesktopNavbar = () => {
                     />
                     {accountDropdownOpen &&
                         <div onMouseLeave={toggleAccountDropDownBtn} class="dropdown-content">
-                            <Link to=""></Link>
-                            <Link to=""></Link>
-                            <Link to=""></Link>
+                            <Link to="/"></Link>
+                            <Link to="/"></Link>
+                            <Link to="/"></Link>
                         </div>}
                 </div>
             </li>
@@ -79,19 +79,19 @@ const DesktopNavbar = () => {
                     />
                     {countriesDropdownOpen &&
                         <div onMouseLeave={toggleCountriesDropDownBtn} class="dropdown-content flags-dropdown-content" onBlur={toggleCountriesDropDownBtn}>
-                            <Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
+                            <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
                                 <img
                                     className="country-img"
                                     alt="united states"
                                     src="./../../images/countries-icons/egypt.svg"
                                 /></Link>
-                            <Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/united-kingdom.svg')}>
+                            <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/united-kingdom.svg')}>
                                 <img
                                     className="country-img"
                                     alt="united states"
                                     src="./../../images/countries-icons/united-kingdom.svg"
                                 /></Link>
-                            <Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/united-states.svg')}>
+                            <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/united-states.svg')}>
                                 <img
                                     className="country-img"
                                     alt="united states"

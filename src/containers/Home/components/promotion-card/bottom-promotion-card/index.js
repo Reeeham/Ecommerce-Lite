@@ -21,7 +21,7 @@ export const BottomPromotion = (props) => {
             </div>
             <div className="promotion-desc">{promotion.desc}</div>
             <div className="promotion-btn">
-                <button><Link to="" >Browse Products</Link></button>
+                <button><Link to="/" >Browse Products</Link></button>
             </div>
         </div>
         <div className="promotion-bottom">

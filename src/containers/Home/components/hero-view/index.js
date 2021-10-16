@@ -13,7 +13,7 @@ const HeroView = (props) => {
                     <p className="promotional-text">{heroViewData.promotion_text}</p>
                     <h1 className="kitchen-text">{heroViewData.title}</h1>
                     <p className="commodo-text">{heroViewData.description}</p>
-                    <Link to={heroViewData.action_link} className="browse-btn">Browse Products</Link>
+                    {heroViewData.action_link !== undefined && <Link to={heroViewData.action_link} className="browse-btn">Browse Products</Link>}
                     <div>
                     <p className="border-text"></p>
                     <img className="assistant-img" alt="assistant" src={heroViewData.assistant_image}></img>

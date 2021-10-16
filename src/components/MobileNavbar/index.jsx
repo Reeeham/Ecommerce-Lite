@@ -43,9 +43,9 @@ const MobileNavbar = () => {
                             />
                         </button>
                         <ul className="sub-menu">
-                            <li><Link to="">Fashion</Link></li>
-                            <li><Link to="">Furniture</Link></li>
-                            <li><Link to="">Electronics</Link></li>
+                            <li><Link to="/">Fashion</Link></li>
+                            <li><Link to="/">Furniture</Link></li>
+                            <li><Link to="/">Electronics</Link></li>
                         </ul>
                     </li>
                     <li>
@@ -57,9 +57,9 @@ const MobileNavbar = () => {
                             />
                         </button>
                         <ul className="sub-menu">
-                            <li><Link to="">Profile</Link></li>
-                            <li><Link to="">Logout</Link></li>
-                            <li><Link to="">any</Link></li>
+                            <li><Link to="/">Profile</Link></li>
+                            <li><Link to="/">Logout</Link></li>
+                            <li><Link to="/">any</Link></li>
                         </ul>
                     </li>
                     <li>
@@ -76,7 +76,7 @@ const MobileNavbar = () => {
                             />
                         </button>
                         <ul className="sub-menu">
-                            <li><Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
+                            <li><Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
                                 <img
                                     className="country-img"
                                     alt="united states"
@@ -84,7 +84,7 @@ const MobileNavbar = () => {
                                 /></Link>
                             </li>
                             <li>
-                                <Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/united-kingdom.svg')}>
+                                <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/united-kingdom.svg')}>
                                     <img
                                         className="country-img"
                                         alt="united states"
@@ -92,7 +92,7 @@ const MobileNavbar = () => {
                                     /></Link>
                             </li>
                             <li>
-                                <Link to="" onClick={() => handleCountryChange('./../../images/countries-icons/united-states.svg')}>
+                                <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/united-states.svg')}>
                                     <img
                                         className="country-img"
                                         alt="united states"

@@ -7,7 +7,11 @@ const Navbar = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        window.addEventListener("resize", () => setWidth(window.innerWidth));
+        window.addEventListener("resize", (e) => {
+            e.preventDefault();
+            setWidth(window.innerWidth);
+        }
+        );
     }, [width]);
 
     return (

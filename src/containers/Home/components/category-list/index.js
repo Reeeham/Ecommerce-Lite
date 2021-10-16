@@ -37,13 +37,13 @@ const CategoryList = (props) => {
 
 export default CategoryList;
 
-CategoryList.propTypes = {
-    categories: PropTypes.shape([{
+CategoryList.defaultProps = {
+    categories: [{
         id: PropTypes.number,
         title: PropTypes.string,
         description: PropTypes.string,
         action_link: PropTypes.string,
         image: PropTypes.string,
         alt_value: PropTypes.string
-    }])
+    }]
 }

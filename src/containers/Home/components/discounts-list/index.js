@@ -14,7 +14,7 @@ const DiscountsList = (props) => {
             <div className="container">
                 <div className="discounts-header">
                     <h1 className="discounts-title">Recent Discounts</h1>
-                    <Link to="" className="all-products-link">View All Products</Link>
+                    <Link to="/" className="all-products-link">View All Products</Link>
                 </div>
             </div>
             <div className="container discounts-list">
@@ -31,8 +31,8 @@ const DiscountsList = (props) => {
 
 export default DiscountsList
 
-DiscountsList.propTypes = {
-    discounts: PropTypes.shape([{
+DiscountsList.defaultProps  = {
+    discounts: [{
         id: PropTypes.number,
         discount_amount: PropTypes.string,
         flash_deal: PropTypes.string,
@@ -45,5 +45,5 @@ DiscountsList.propTypes = {
         discount_price: PropTypes.string,
         stock_count: PropTypes.string,
         category_id : PropTypes.number 
-    }])
+    }]
 }

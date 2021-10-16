@@ -17,13 +17,13 @@ export const ProductCard = (props) => {
      <div className="buttons">
          <div className="save-button">
              <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
-             <Link to=""><span className="save-text">Save</span> <span className="discount_amount">${product.discount_amount}</span></Link>
+             <Link to="/"><span className="save-text">Save</span> <span className="discount_amount">${product.discount_amount}</span></Link>
          </div>
          {
              product.flash_deal === "true" &&
              <div className="flash-deal-button">
                  <FontAwesomeIcon icon={faBolt} className="deal-icon" style={{ marginRight: "5px" }} />
-                 <Link to="">Flash deal</Link>
+                 <Link to="/">Flash deal</Link>
              </div>
          }
 
