@@ -17,13 +17,15 @@ import './index.scss';
 const ProductsByCategory = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (product) => {setShow(true); setSelectedProduct(product)};
     const [products, setProducts] = useState([]);
     const [nextPageNumber, setNextPageNumber] = useState(1);
     const [pageCount, setPageCount] = useState([]);
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(undefined);
+    const [product, setSelectedProduct] = useState({});
+
     const setCount = (res) => {
         let count = Math.ceil(res.data.length / 5);
         const arrCount = [];
@@ -96,7 +98,7 @@ const ProductsByCategory = (props) => {
                 <div className="products-by-category">
                     {products.map((product, i) => {
                         return (
-                            <div key={i} className="product-cat-list-item" onClick={handleShow}>
+                            <div key={i} className="product-cat-list-item" onClick={(e) => {e.preventDefault();handleShow(product)}}>
                                 <div className="buttons">
                                     <div className="save-button">
                                         <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />
@@ -158,18 +160,18 @@ const ProductsByCategory = (props) => {
                     })}
                 </div>
             </div>
-            <ProductDetails show={show} handleClose={handleClose} />
+            <ProductDetails show={show} handleClose={handleClose} product={product} />
             <div className="container">
                 {/* <Pagination /> */}
                 <div className="pagination-wrapper">
                     <ul className="pagination modal-1">
-                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev" to="">&laquo;</Link></li> }
+                        {nextPageNumber > 1 && <li><Link onClick={(e) => { e.preventDefault(); getAllProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev" to="/">&laquo;</Link></li> }
                         
                         { pageCount.map((li,i) => {
-                             return (<li key={i}> <Link  className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProductsByPage(li); setNextPageNumber(li) }} to="">{li}</Link></li>)
+                             return (<li key={i}> <Link  className={`${nextPageNumber === li ? "active" : ""} `} onClick={(e) => { e.preventDefault(); getAllProductsByPage(li); setNextPageNumber(li) }} to="/">{li}</Link></li>)
                              })
                         }
-                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } className="next" to="">&raquo;</Link></li> }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={(e) => { e.preventDefault(); getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } className="next" to="/">&raquo;</Link></li> }
                     </ul>
                 </div>
             </div>
