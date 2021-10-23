@@ -8,8 +8,7 @@ import { ProgressBarLine } from 'react-progressbar-line';
 import { Link } from 'react-router-dom';
 import Loader from '../../../../components/Loader/Loader';
 import { categoryList } from '../../services/categoryList';
-import { allProducts, fetchProducts } from '../../services/discountList';
-// import { Pagination } from '../pagination';
+import { allProducts, fetchProducts, productsByCategory, productsByCategoryAndPage } from '../../services/discountList';
 import { stockCountColor } from '../product-card';
 import ProductDetails from '../product-details';
 import './index.scss';
@@ -24,35 +23,53 @@ const ProductsByCategory = (props) => {
     const [pageCount, setPageCount] = useState([]);
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
-    const [selectedCategoryId, setSelectedCategoryId] = useState(0);
-
-
+    const [selectedCategoryId, setSelectedCategoryId] = useState(undefined);
+    const setCount = (res) => {
+        let count = Math.ceil(res.data.length / 5);
+        const arrCount = [];
+        for (let i = 0; i < count; i++) {
+            arrCount.push(i + 1);
+        }
+        setPageCount(arrCount);
+    }
     useEffect(() => {
         getAllProductsByPage(nextPageNumber);
-        getCount();
+        allProducts().then(res => { 
+            setCount(res);
+        });
+        getCategoryList();
+    }, [])
+    
+    useEffect(() => {
+        getAllProductsByPage(nextPageNumber);
         getCategoryList();
     }, [nextPageNumber])
+    
+    useEffect(() => {
+        if( selectedCategoryId !== 'undefined' && selectedCategoryId !== undefined) { 
+            productsByCategoryAndPage(selectedCategoryId, nextPageNumber).then(
+                res => {
+                    setProducts(res.data);
+                    productsByCategory(selectedCategoryId).then(res=> setCount(res));
+                }
+            )
+        }else{ 
+            getAllProductsByPage(nextPageNumber);
+            allProducts().then(res => { 
+                setCount(res);
+            });
+        }
+        
+    }, [setSelectedCategoryId,selectedCategoryId])
+    
 
-    const getCount = () => {
-        allProducts().then(res => { 
-            let count = Math.ceil(res.data.length / 5);
-            const arrCount = [];
-            for(let i=0; i < count; i++){
-                arrCount.push(i+1);
-            }
-            setPageCount(arrCount);
-        })
-       
-    }
-    const getAllProductsByPage = (number) => { 
+    const getAllProductsByPage = (number) => {
         fetchProducts(number).then(res => {
-            console.log('count', res.data.length)
             setProducts(res.data);
-            setLoading(false);
         });
     }
-
-    const getCategoryList = () => { 
+    
+    const getCategoryList = () => {
         categoryList().then(res => {
             setCategories(res.data);
             setLoading(false);
@@ -65,9 +82,9 @@ const ProductsByCategory = (props) => {
             <div className="container">
                 <h5 className="tasks-header-num">Showing {products.length} tasks</h5>
                 <div className="filter-header">
-                    <div> Sort by:
-                        <select value={selectedCategoryId} onChange={(e) => { setSelectedCategoryId(e.target.value); }}>
-                            <option>Choose Category</option>
+                    <div> <span className="mr-sm">Sort by:</span>
+                        <select value={selectedCategoryId} defaultValue={undefined}  onChange={(e) => { setSelectedCategoryId(e.target.value); }}>
+                            <option  value='undefined'>Choose Category</option>
                             {categories.map((cat, i) => {
                                 return (<option key={i} value={cat.id}>{cat.title}</option>);
                             })}
@@ -77,7 +94,7 @@ const ProductsByCategory = (props) => {
             </div>
             <div className="container">
                 <div className="products-by-category">
-                    {products.filter(e=> selectedCategoryId !== 0 ?  e.category_id === selectedCategoryId : true).map((product, i) => {
+                    {products.map((product, i) => {
                         return (
                             <div key={i} className="product-cat-list-item" onClick={handleShow}>
                                 <div className="buttons">
@@ -146,13 +163,13 @@ const ProductsByCategory = (props) => {
                 {/* <Pagination /> */}
                 <div className="pagination-wrapper">
                     <ul className="pagination modal-1">
-                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev">&laquo;</Link></li> }
+                        {nextPageNumber > 1 && <li><Link onClick={()=> {getAllProductsByPage(nextPageNumber-1);setNextPageNumber(nextPageNumber-1)}} className="prev" to="">&laquo;</Link></li> }
                         
                         { pageCount.map((li,i) => {
-                             return (<li> <Link key ={i} className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProductsByPage(li); setNextPageNumber(li) }}>{li}</Link></li>)
+                             return (<li key={i}> <Link  className={`${nextPageNumber === li ? "active" : ""} `} onClick={() => {getAllProductsByPage(li); setNextPageNumber(li) }} to="">{li}</Link></li>)
                              })
                         }
-                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } className="next">&raquo;</Link></li> }
+                        {nextPageNumber >= 1 && nextPageNumber < pageCount.length && <li><Link onClick={()=> { getAllProductsByPage(nextPageNumber+1); setNextPageNumber(nextPageNumber+1)} } className="next" to="">&raquo;</Link></li> }
                     </ul>
                 </div>
             </div>
