@@ -11,9 +11,8 @@ export const stockCountColor = (countValue) => {
 }
 export const ProductCard = (props) => { 
     
-    const {product} = props;
-
-     return(<div className="product-card">
+    const {product, handleShow, productClassName} = props; 
+     return(<div className={`product-card ${productClassName ? 'discount-product' : 'product-card-default' }`} onClick={(e) => {handleShow(product)}}>
      <div className="buttons">
          <div className="save-button">
              <img className="percent-badge-icon" alt="percent-badge" src="./../../images/discounts/percent-badge.svg" />

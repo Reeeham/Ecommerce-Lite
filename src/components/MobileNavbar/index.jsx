@@ -23,15 +23,8 @@ const MobileNavbar = () => {
                             <span className="search-icon">
                                 <FontAwesomeIcon icon={faSearch} style={{ marginLeft: "5px" }} />{" "}
                             </span>
-
                         </div>
-
                     </li>
-
-                    <li>
-
-                    </li>
-
                 </ul>
                 <ul className="nav-list">
                     <li>

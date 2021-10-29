@@ -1,7 +1,13 @@
 @import "/public/css/colors";
 @import "/public/css/variables";
 @import "/public/css/mixins";
-
+.discount-product{
+  flex: 1;
+  margin: 0 0.8rem 0.1rem 0 !important;
+}
+.product-card-default { 
+  width: calc(100% / 3 - 0.5rem);
+}
 .product-card {
   display: flex;
   flex-direction: column;
@@ -10,8 +16,7 @@
   border-radius: 0.6rem;
   position: relative;
   height: 377px;
-  flex: 1;
-  margin: 0 0.8rem 0.1rem 0 !important;
+
   @include iPadPro {
     margin: 0 1rem 0.7rem 0.9rem !important;
 

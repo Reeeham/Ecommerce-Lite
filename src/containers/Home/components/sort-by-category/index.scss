@@ -2,20 +2,14 @@
 @import "/public/css/variables";
 @import "/public/css/mixins";
 
-.filter-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tasks-header-num {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
+
+
 .products-by-category {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  grid-column-gap: 1rem;
+  grid-column-gap: 0.7rem;
+  grid-row-gap: 0.5rem;
 }
 .product-cat-list-item {
   margin-bottom: 1rem;
@@ -38,56 +32,5 @@
 .product-cat-list-item:last-child {
   margin-right: 0;
 }
-.active {
-  background: cornflowerblue;
-}
 
-/**    pagination  **/
-.pagination-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-.pagination {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
 
-  li {
-    display: inline;
-    text-align: center;
-  }
-  a {
-    float: left;
-    display: block;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 5px 12px;
-    color: #fff;
-    margin-left: -1px;
-    border: 1px solid transparent;
-    line-height: 1.5;
-    &.active {
-      cursor: default;
-    }
-    &:active {
-      outline: none;
-    }
-  }
-}
-.modal-1 {
-  a {
-    border-color: #ddd;
-    color: #4285f4;
-    background: #fff;
-    &:hover {
-      background: #eee;
-    }
-    &.active,
-    &:active {
-      border-color: #4285f4;
-      background: #4285f4;
-      color: #fff;
-    }
-  }
-}

@@ -28,9 +28,7 @@ export const ProductDetails = (props) => {
                                 <ul>
                                     <li>Home</li>
                                     <li>Shop</li>
-                                    {/* <li>Clothing</li> */}
                                     <li>{categoryName(product.category_id)}</li>
-                                    {/* <li>{product.title}</li> */}
                                 </ul>
                             </div>
                         </div>
@@ -58,11 +56,7 @@ export const ProductDetails = (props) => {
                                 <div className="color">Color
                                     <div className="color-options">
                                         <select value="red">
-                                            {/* onChange={(e) => { setSelectedCategoryId(e.target.value); }} */}
                                             <option>Choose Color</option>
-                                            {/* {categories.map((cat, i) => {
-                            return (<option key={i} value={cat.id}>{cat.title}</option>);
-                        })} */}
                                         </select></div>
                                 </div>
                                 <div className="clear-selection">clear selection</div>
@@ -70,7 +64,6 @@ export const ProductDetails = (props) => {
                                     <input value="1" className="qauntity"></input>
                                     <button>Add to cart</button>
                                 </div>
-                                {/* <div className="nav-tabs"></div> */}
                             </div>
 
                         </div>
