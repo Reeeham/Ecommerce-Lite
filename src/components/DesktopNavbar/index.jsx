@@ -13,7 +13,6 @@ const DesktopNavbar = () => {
     const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
     const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
     const [countriesDropdownOpen, setCountriesDropdownOpen] = useState(false);
-    // const [showNav, setShowNav] = useState(true);
     const [selectedCountryImgPath, setSelectedCountryImgPath] = useState('./../../images/countries-icons/united-states.svg');
     const toggleCategoriesDropDownBtn = () => setCategoriesDropdownOpen(!categoriesDropdownOpen);
     const toggleAccountDropDownBtn = () => setAccountDropdownOpen(!accountDropdownOpen);
@@ -22,7 +21,7 @@ const DesktopNavbar = () => {
 
     return (<nav className="main-container second-header">
         <ul className="container">
-            <li className="logo-word">store<span>logo</span></li>
+            <li className="logo-word"><Link to="/" className="cursor">store<span>logo</span></Link></li>
             <li className="search">
                 <div className="search-container">
                     <button className="drop-btn" onMouseOver={toggleCategoriesDropDownBtn} onClick={toggleCategoriesDropDownBtn}>

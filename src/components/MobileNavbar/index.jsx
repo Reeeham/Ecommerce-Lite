@@ -16,7 +16,7 @@ const MobileNavbar = () => {
         <>
             <nav className="main-container second-header">
                 <ul className="container nav-list">
-                    <li className="logo-word">store<span>logo</span></li>
+                    <li className="logo-word"><Link to="/" className="cursor">store<span>logo</span></Link></li>
                     <li className="search">
                         <div>
                             <input className="search-input" type="search" placeholder="Enter Keywords" />
