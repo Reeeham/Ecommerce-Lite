@@ -71,16 +71,38 @@
   
   .dropdown-content {
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0.1rem;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    top:45px;
+    top: 41px;
+    font-size: 0.8rem;
+
     @include mobile {
-        top: 25px;
-        left: -10px;
-        background: white;
+      top: 25px;
+      left: -10px;
     }
+    .cat-item { 
+      width: calc(100% / 4);
+      display: block !important;
+      a{
+        text-decoration: color(light-grey) solid underline;
+        text-underline-offset: 0.4rem;
+      }
+      .subcat-items{
+        display: flex;
+        flex-direction: column;
+        a{
+          text-decoration: none !important;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .products-submenu { 
+    display: flex;
+    width: 50vw !important;
+    justify-content:flex-start !important;
   }
   
   .dropdown-content a{
@@ -92,30 +114,28 @@
     min-width: 59px !important;
 }
 .search {
-    margin-top: .3em;
+    margin-top: 0.3em;
     position: relative;
-    @include mobile { 
-        flex-basis: 10vmax !important;
-        margin-top: 2em;
+    @include mobile {
+      flex-basis: 10vmax !important;
+      margin-top: 2em;
     }
-    @include iPads { 
-        margin-top: 2em;
-        width: 73vw;
-
+    @include iPads {
+      margin-top: 2em;
+      width: 73vw;
     }
-    div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 2.5rem;
-    flex: 1;
-       @include mobile { 
-           flex-direction: column;
-       }
+    .search-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 2.5rem;
+      flex: 1;
+      @include mobile {
+        flex-direction: column;
+      }
     }
-
-}
+  }
 .search-input{
     height: 100%;
     width: inherit;
@@ -143,17 +163,14 @@
     padding: 0 0.8rem;
     background: #0d0724;
     color: white;
-     @include mobile { 
-        place-items: flex-end;
-        order: 2;
-        border-radius: 0.5rem;
-        padding: 0.4rem 1.4rem;
-        width: 100%;
-
-     }
-
+    @include mobile {
+      place-items: flex-end;
+      order: 2;
+      border-radius: 0;
+      padding: 0.5rem 1.4rem;
+      width: 100%;
+    }
   }
-
 .search-icon {
     position: absolute;
     right: 3%;

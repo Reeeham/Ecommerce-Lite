@@ -24,8 +24,8 @@ const DesktopNavbar = () => {
         <ul className="container">
             <li className="logo-word">store<span>logo</span></li>
             <li className="search">
-                <div>
-                    <button className="drop-btn" onClick={toggleCategoriesDropDownBtn}>
+                <div className="search-container">
+                    <button className="drop-btn" onMouseOver={toggleCategoriesDropDownBtn} onClick={toggleCategoriesDropDownBtn}>
                         All Products
                         <FontAwesomeIcon
                             icon={faAngleDown}
@@ -37,17 +37,57 @@ const DesktopNavbar = () => {
                         <FontAwesomeIcon icon={faSearch} style={{ marginLeft: "5px" }} />{" "}
                     </span>
 
-                    {categoriesDropdownOpen &&
-                        <div onMouseLeave={toggleCategoriesDropDownBtn} className="dropdown-content" onBlur={toggleCategoriesDropDownBtn}>
-                            <Link to="/">Fashion</Link>
-                            <Link to="/">Furniture</Link>
-                            <Link to="/">Electronics</Link>
+                    { categoriesDropdownOpen &&
+                        <div onMouseLeave={toggleCategoriesDropDownBtn} className="dropdown-content products-submenu" onBlur={toggleCategoriesDropDownBtn}>
+                            <div className="cat-item"><Link to="/">Dresses</Link>
+                                <div className="subcat-items">
+                                    <Link to="/">Tops</Link>
+                                    <Link to="/">Bottoms</Link>
+                                    <Link to="/">Jumpsuits</Link>
+                                    <Link to="/">Activewear</Link>
+                                    <Link to="/">Beahwear</Link>
+                                    <Link to="/">Lingerie</Link>
+                                    <Link to="/">Sleepwear</Link>
+                                </div>
+                            </div>
+                            <div className="cat-item"><Link to="/">Shoes</Link>
+                                <div className="subcat-items">
+                                    <Link to="/">Sneakers &amp; Atheletic shoes </Link>
+                                    <Link to="/">Boots and booties</Link>
+                                    <Link to="/">Casual shoes</Link>
+                                    <Link to="/">Flats</Link>
+                                    <Link to="/">Heels</Link>
+                                    <Link to="/">Sandals &amp; slippers</Link>
+                                    <Link to="/">Home footwear</Link>
+                                </div>
+                            </div>
+                            <div className="cat-item"><Link to="/">Bags</Link>
+                                <div className="subcat-items">
+                                    <Link to="/">Backpacks</Link>
+                                    <Link to="/">Handbags</Link>
+                                    <Link to="/">Crossbody</Link>
+                                    <Link to="/">Laptop bags</Link>
+                                    <Link to="/">Sports bags</Link>
+                                    <Link to="/">Lunch bags</Link>
+                                    <Link to="/">Baby care bags</Link>
+                                    <Link to="/">Travel bags</Link>
+                                </div>
+                            </div>
+                            <div className="cat-item"><Link to="/">Accessories</Link>
+                                <div className="subcat-items">
+                                    <Link to="/">Belts</Link>
+                                    <Link to="/">Sunglasses &amp; eyewear</Link>
+                                    <Link to="/">Watches</Link>
+                                    <Link to="/">Wallets</Link>
+                                    <Link to="/">Socks</Link>
+                                </div>
+                            </div>
                         </div>}
                 </div>
             </li>
             <li>
                 <div className="dropdown">
-                    <span className="cursor" onClick={toggleAccountDropDownBtn}>My Account</span>
+                    <span className="cursor" onMouseOver={toggleAccountDropDownBtn} onClick={toggleAccountDropDownBtn}>My Account</span>
                     <FontAwesomeIcon
                         icon={faAngleDown}
                         style={{ marginLeft: "0.7rem" }}
@@ -56,9 +96,9 @@ const DesktopNavbar = () => {
                     />
                     {accountDropdownOpen &&
                         <div onMouseLeave={toggleAccountDropDownBtn} class="dropdown-content">
-                            <Link to="/"></Link>
-                            <Link to="/"></Link>
-                            <Link to="/"></Link>
+                             <Link to="/">Profile</Link>
+                            <Link to="/">Orders</Link>
+                            <Link to="/">Logout</Link>
                         </div>}
                 </div>
             </li>
@@ -69,6 +109,7 @@ const DesktopNavbar = () => {
                         className="country-img cursor"
                         alt="united states"
                         src={selectedCountryImgPath}
+                        onMouseOver={toggleCountriesDropDownBtn}
                         onClick={toggleCountriesDropDownBtn}
                     />
                     <FontAwesomeIcon
@@ -110,7 +151,7 @@ const DesktopNavbar = () => {
                     </div>
                 </div>
             </li>
-
+       
         </ul>
     </nav>);
 }
