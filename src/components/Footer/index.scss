@@ -1,0 +1,58 @@
+@import '/public/css/colors';
+
+
+.footer-container{ 
+    background: color(primary);
+}
+
+.footer-list-container { 
+    color:white;
+    width: 100%;
+    display: flex;
+    grid-row-gap: 1rem;
+    justify-content: space-between;
+    .footer-list { 
+        width: calc(100% / 4 - 1rem);
+        &:last-child{
+            width: calc(100% / 2 - 1rem);
+        }
+        .footer-list-item{ 
+            width: 100%;
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.8rem;
+            &:first-child { 
+                margin-bottom: 1rem;
+                font-weight: 600;
+                font-family: Rubik,Arial,Helvetica,sans-serif;
+            }
+            
+            .footer-subscribtion {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .subscribe-input { 
+                    width: 50%;
+                    appearance: none;
+                    height: 2.2rem;
+                    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+                    border-color: #ccc;
+                    background-color: color(white);
+                    border-style: solid;
+                    border-width: 1px;
+                    border-radius: 4px;
+                    margin-right: 0.7rem;
+                    padding-left: 0.8rem;
+                }
+                .footer-subscribe-btn { 
+                    width: 50%;
+                    color: white;
+                    background-color: black;
+                    border-radius: 0.25rem;
+                    padding:  auto;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
