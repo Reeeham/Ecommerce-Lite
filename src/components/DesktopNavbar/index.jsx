@@ -44,7 +44,7 @@ const DesktopNavbar = () => {
                                     <Link to="/">Bottoms</Link>
                                     <Link to="/">Jumpsuits</Link>
                                     <Link to="/">Activewear</Link>
-                                    <Link to="/">Beahwear</Link>
+                                    <Link to="/">Beachwear</Link>
                                     <Link to="/">Lingerie</Link>
                                     <Link to="/">Sleepwear</Link>
                                 </div>
