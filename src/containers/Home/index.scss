@@ -87,7 +87,7 @@ img {
 }
 .rec.rec-arrow-left {
   left: 0;
-  z-index: 1000;
+  z-index: 999;
   @include iPadPro {
     left: -13px;
   }

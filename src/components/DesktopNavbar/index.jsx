@@ -7,16 +7,19 @@ import {
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
+import { PreviewCart } from '../preview-cart';
 
 const DesktopNavbar = () => {
 
     const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
     const [accountDropdownOpen, setAccountDropdownOpen] = useState(false);
     const [countriesDropdownOpen, setCountriesDropdownOpen] = useState(false);
+    const [cartDropdownOpen, setCartDropdownOpen] = useState(false);
     const [selectedCountryImgPath, setSelectedCountryImgPath] = useState('./../../images/countries-icons/united-states.svg');
     const toggleCategoriesDropDownBtn = () => setCategoriesDropdownOpen(!categoriesDropdownOpen);
     const toggleAccountDropDownBtn = () => setAccountDropdownOpen(!accountDropdownOpen);
     const toggleCountriesDropDownBtn = () => setCountriesDropdownOpen(!countriesDropdownOpen);
+    const toggleCartDropDownBtn = () => setCartDropdownOpen(!cartDropdownOpen);
     const handleCountryChange = (name) => { setSelectedCountryImgPath(name) }
 
     return (<nav className="main-container second-header">
@@ -36,7 +39,7 @@ const DesktopNavbar = () => {
                         <FontAwesomeIcon icon={faSearch} style={{ marginLeft: "5px" }} />{" "}
                     </span>
 
-                    { categoriesDropdownOpen &&
+                    {categoriesDropdownOpen &&
                         <div onMouseLeave={toggleCategoriesDropDownBtn} className="dropdown-content products-submenu" onBlur={toggleCategoriesDropDownBtn}>
                             <div className="cat-item"><Link to="/">Dresses</Link>
                                 <div className="subcat-items">
@@ -95,7 +98,7 @@ const DesktopNavbar = () => {
                     />
                     {accountDropdownOpen &&
                         <div onMouseLeave={toggleAccountDropDownBtn} class="dropdown-content">
-                             <Link to="/">Profile</Link>
+                            <Link to="/">Profile</Link>
                             <Link to="/">Orders</Link>
                             <Link to="/">Logout</Link>
                         </div>}
@@ -139,18 +142,22 @@ const DesktopNavbar = () => {
                                 /></Link>
                         </div>}
                 </div>
-                <div className="dropdown">
-                    <div>
+                <div className="dropdown cursor">
+                    <div className="cursor" onClick={toggleCartDropDownBtn}>
                         <FontAwesomeIcon
                             icon={faShoppingCart}
                         />
                     </div>
-                    <div className="cart-text-style"> Cart
+                    <div className="cart-text-style cursor" onClick={toggleCartDropDownBtn}> Cart
                         <span className="cart-num">0</span>
                     </div>
+                    {cartDropdownOpen &&
+                        <div class="dropdown-content">
+                            <PreviewCart />
+                        </div>}
                 </div>
             </li>
-       
+
         </ul>
     </nav>);
 }

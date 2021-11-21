@@ -62,7 +62,7 @@ export const ProductDetails = (props) => {
                                 <div className="clear-selection">clear selection</div>
                                 <div className="add-to-cart">
                                     <input value="1" className="qauntity"></input>
-                                    <button>Add to cart</button>
+                                    <button className="cursor">Add to cart</button>
                                 </div>
                             </div>
 

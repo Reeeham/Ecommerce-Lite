@@ -10,7 +10,6 @@ const Content = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/products-by-category" component={ProductsByCategory} />
-                {/* <Route exact path="/product-details" component={ProductDetails} /> */}
                 <Redirect to="/"/>
             </Switch>
 
