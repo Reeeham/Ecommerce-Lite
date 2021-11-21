@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../services/cartService';
 import { categoryList } from '../../services/categoryList';
 import { Reviews } from '../reviews';
 import './index.scss'
@@ -7,7 +8,7 @@ import './index.scss'
 export const ProductDetails = (props) => {
     const { show, handleClose, product } = props;
     const [categories, setCategories] = useState([]);
-
+    
     useEffect(() => {
         categoryList().then(res => {
             setCategories(res.data);
@@ -62,7 +63,7 @@ export const ProductDetails = (props) => {
                                 <div className="clear-selection">clear selection</div>
                                 <div className="add-to-cart">
                                     <input value="1" className="qauntity"></input>
-                                    <button className="cursor">Add to cart</button>
+                                    <button className="cursor" onClick={(e) => { e.preventDefault(); addToCart(product)}}>Add to cart</button>
                                 </div>
                             </div>
 
