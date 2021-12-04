@@ -33,6 +33,9 @@ code {
   display: flex;
   flex-direction: column;
 }
+.full-height{
+  height: 100vh !important;
+}
 button {
   font-size: 100%;
   font-family: inherit;

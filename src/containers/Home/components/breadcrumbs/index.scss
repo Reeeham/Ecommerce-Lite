@@ -1,0 +1,26 @@
+@import "/public/css/colors";
+
+.bread-crumbs  {
+    color: color(dark-grey);
+   
+  ul {
+    display: flex;
+    padding: 5px;
+    li{
+      text-decoration: underline;
+    }
+    li:last-child{ 
+      text-decoration: none;
+    }
+    li::after {
+      display:inline-block;
+        content: '/'+'\0000a0';
+        text-decoration: none;
+        margin-right: .3rem;
+
+    }
+    li:last-child:after {
+         content: '';
+        }
+   }
+}

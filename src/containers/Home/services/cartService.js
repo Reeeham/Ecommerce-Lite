@@ -25,12 +25,11 @@ export const updateProduct = (productId, amount) => {
   let existingProduct = cartList.find(p => p.id === productId);
   if (!existingProduct) return;
   existingProduct.quantity += amount;
-  if (existingProduct.quantity <= 0) {
-    cartList = cartList.filter(p => p.id !== productId);
+  if (existingProduct.quantity > 0) {
     localStorage.setItem('cart', JSON.stringify(cartList));
   }
 }
-const getCart = () => {
+export const getCart = () => {
   let cart = localStorage.getItem('cart');
   let cartList = JSON.parse(cart);
   return cartList

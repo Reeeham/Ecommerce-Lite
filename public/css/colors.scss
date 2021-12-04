@@ -11,7 +11,8 @@ $colors: (primary: #340ec1,
     title-color: hsl(252deg 76% 23%),
     green-light: hsl(154deg 48% 45%),
     green-lighter:hsl(135deg 81% 58%),
-    transparent-grey: rgb(157 143 143 / 43%)
+    transparent-grey: rgb(157 143 143 / 43%),
+    
 );
 
 @function color($color-name) {

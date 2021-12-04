@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../services/cartService';
 import { categoryList } from '../../services/categoryList';
+import { Breadcrumbs } from '../breadcrumbs';
 import { Reviews } from '../reviews';
 import './index.scss'
 
@@ -25,13 +26,7 @@ export const ProductDetails = (props) => {
                 <div className="modal-content">
                     <div className="product-details">
                         <div className="product-details-header">
-                            <div className="bread-crumbs">
-                                <ul>
-                                    <li>Home</li>
-                                    <li>Shop</li>
-                                    <li>{categoryName(product.category_id)}</li>
-                                </ul>
-                            </div>
+                            <Breadcrumbs navList={['Home', 'Shop', categoryName(product.category_id)]} />
                         </div>
                         <div className="product-details-body">
                             <div className="photo-gallery">

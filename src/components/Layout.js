@@ -8,7 +8,7 @@ import Header from './Header/Header'
 
 const Layout = () => {
     return (
-        <div className="main-container">
+        <div className="main-container full-height">
             <Header />
             <Content />
             <Footer />
