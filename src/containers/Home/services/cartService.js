@@ -6,12 +6,10 @@ export const addToCart = (product) => {
   let existingProduct = cartList.find(p => p.id === id);
   if (existingProduct) {
     existingProduct.quantity += product.quantity //update item
-    console.log('cartList', cartList);
 
   } else {
     product.quantity = product.quantity ? product.quantity++ : 1;
     cartList.push(product);
-    console.log('cartList', cartList);
   }
   localStorage.setItem('cart', JSON.stringify(cartList));
 
@@ -24,11 +22,12 @@ export const updateProduct = (productId, amount) => {
   let cartList = getCart();
   let existingProduct = cartList.find(p => p.id === productId);
   if (!existingProduct) return;
-  existingProduct.quantity += amount;
+  existingProduct.quantity = amount;
   if (existingProduct.quantity > 0) {
     localStorage.setItem('cart', JSON.stringify(cartList));
   }
 }
+
 export const getCart = () => {
   let cart = localStorage.getItem('cart');
   let cartList = JSON.parse(cart);
@@ -36,6 +35,6 @@ export const getCart = () => {
 }
 export const removeProduct = (productId) => {
   let cartList = getCart();
-  cartList.filter(p => p.id !== productId);
-  localStorage.setItem('cart', JSON.stringify(cartList));
+  let filtered = Array.from(cartList).filter(p => p.id !== productId);
+  localStorage.setItem('cart', JSON.stringify(filtered));
 }

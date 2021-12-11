@@ -6,9 +6,9 @@
   ul {
     display: flex;
     padding: 5px;
-    li{
-      text-decoration: underline;
-    }
+    // li{
+    //   text-decoration: underline;
+    // }
     li:last-child{ 
       text-decoration: none;
     }
@@ -17,6 +17,7 @@
         content: '/'+'\0000a0';
         text-decoration: none;
         margin-right: .3rem;
+        margin-left: .3rem;
 
     }
     li:last-child:after {

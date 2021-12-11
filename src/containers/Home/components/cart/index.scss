@@ -2,7 +2,6 @@
 @import "/public/css/mixins";
 
 .cart-breadcrumbs {
-        background: rgb(226, 225, 225);
         color: color(grey);
 }
 
@@ -146,7 +145,7 @@
         width: 100%;
         margin: 1rem 0;
         display: flex;
-        button{
+         button{
             text-transform: capitalize;
             width: 100%;
             padding: 9px 0;
@@ -155,4 +154,8 @@
         }
      
     }
+}
+.cart-item-delete { 
+    margin-left: .4rem;
+    color: color(grey);
 }
