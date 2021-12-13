@@ -115,7 +115,7 @@
     }
 }
 .cart-totals  {
-    width: 53%;
+    width: 45%;
     margin-top: 1rem;
     margin-right:7%;
     align-self: flex-end;
@@ -145,8 +145,9 @@
         width: 100%;
         margin: 1rem 0;
         display: flex;
+     
          button{
-            text-transform: capitalize;
+            text-transform:uppercase;
             width: 100%;
             padding: 9px 0;
             @include dark-btn;

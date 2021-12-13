@@ -9,7 +9,9 @@ import './index.scss'
 export const ProductDetails = (props) => {
     const { show, handleClose, product } = props;
     const [categories, setCategories] = useState([]);
-    
+    //ref to the element for which we want to detect outside clicks
+    // const ref = useRef();
+    // useOnClickOutside(ref, () => handleClose()) 
     useEffect(() => {
         categoryList().then(res => {
             setCategories(res.data);
@@ -20,6 +22,26 @@ export const ProductDetails = (props) => {
         let cat = categories.find(c => c.id === catId);
         return cat ? cat.title : '';
     }
+    //custom hook
+    // function useOnClickOutside(ref, handler) {
+    //     useEffect(()=> {
+    //         const listener = (event) => {
+    //             console.log(event)
+    //             //do nothing if clicking ref's element or descendent elements
+    //             if(!ref.current || ref.current.contains(event.target)){
+    //                 return;
+    //             }
+    //             handler(event);
+    //         };
+    //         document.addEventListener("mouseDown", listener);
+    //         document.addEventListener("touchstart", listener);
+    //         return () => {
+    //             document.removeEventListener("mousedown", listener)
+    //             document.removeEventListener("touchstart", listener)
+    //         }
+
+    //     }, [ref, handler])
+    // }
     return (<>
         {show &&
             <div id="demo-modal" className="modal">
@@ -51,20 +73,20 @@ export const ProductDetails = (props) => {
                                 </div>
                                 <div className="color">Color
                                     <div className="color-options">
-                                        <select value="red">
+                                        <select defaultValue="red">
                                             <option>Choose Color</option>
                                         </select></div>
                                 </div>
                                 <div className="clear-selection">clear selection</div>
                                 <div className="add-to-cart">
-                                    <input value="1" className="qauntity"></input>
+                                    <input defaultValue="1" className="qauntity" onChange={(e) => {e.preventDefault()}}></input>
                                     <button className="cursor" onClick={(e) => { e.preventDefault(); addToCart(product)}}>Add to cart</button>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <Link className="modal-close" onClick={handleClose}>&times;</Link>
+                    <Link to="/" className="modal-close" onClick={(e) => {e.preventDefault();handleClose()}}>&times;</Link>
 
                 </div>
             </div>

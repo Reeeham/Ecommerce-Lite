@@ -36,7 +36,7 @@ const ProductsByCategory = (props) => {
             setCount(res);
         });
         getCategoryList();
-    }, [])
+    }, [nextPageNumber])
     
     useEffect(() => {
         getAllProductsByPage(nextPageNumber);
@@ -58,7 +58,7 @@ const ProductsByCategory = (props) => {
             });
         }
         
-    }, [setSelectedCategoryId,selectedCategoryId])
+    }, [setSelectedCategoryId,selectedCategoryId,nextPageNumber])
     
 
     const getAllProductsByPage = (number) => {

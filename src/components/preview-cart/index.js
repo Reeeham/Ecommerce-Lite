@@ -10,7 +10,7 @@ export const PreviewCart = () => {
     return (<div className="preview-cart">
         <div className="preview-cart-list">
             {cartProducts.map((p, i) => {
-                return (<div className="preview-cart-item">
+                return (<div className="preview-cart-item" key={i}>
                     <div className="preview-cart-item-img">
                         <img src={p.image} alt="Cart item img" />
                     </div>
@@ -26,7 +26,7 @@ export const PreviewCart = () => {
         {cartProducts.length >= 1 && <div className="preview-cart-item-actions">
             <div className="preview-cart-item-checkout">
                 <button>
-                    <Link className="btn-checkout">checkout</Link>
+                    <Link to="/checkout" className="btn-checkout">checkout</Link>
                 </button>
             </div>
             <div className="preview-cart-item-view-cart">

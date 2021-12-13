@@ -152,7 +152,7 @@ const DesktopNavbar = () => {
                         <span className="cart-num">0</span>
                     </div>
                     {cartDropdownOpen &&
-                        <div class="dropdown-content">
+                        <div className="dropdown-content">
                             <PreviewCart />
                         </div>}
                 </div>

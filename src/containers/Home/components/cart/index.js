@@ -9,22 +9,20 @@ import './index.scss'
 export const Cart = () => {
     const [cartProducts, setCartProducts] = useState(getCart());
     const [subTotal, setSubTotal] = useState(0);
-    const [shipping, setShipping] = useState(20);
-    const [feesAndVat, setFeesAndVat] = useState(0);
+    const [shipping] = useState(20);
+    const [feesAndVat] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const deleteItem = (productId) => { 
         removeProduct(productId);
         setCartProducts(getCart())
     }
     useEffect(() => { 
-        let productsTotalPrice = cartProducts.map(p => p.quantity * Number(p.price))
-        let subTotal = productsTotalPrice.reduce((prev, curr) => prev + curr);
-        console.log(productsTotalPrice)
+        let productsTotalPrice = cartProducts.map(p => p.quantity * p.price)
+        let subTotal = Math.round(productsTotalPrice.reduce((prev, curr) => prev + curr, 0));
         let grandTotal = shipping + subTotal;
-        console.log(grandTotal)
         setSubTotal(subTotal);
         setGrandTotal(grandTotal)
-    },[cartProducts,setCartProducts])
+    },[cartProducts,setCartProducts, shipping])
     return (<div>
         <div className="cart-breadcrumbs">
             <Breadcrumbs navList={['Home', 'Your Cart']} />
@@ -63,27 +61,27 @@ export const Cart = () => {
                     </tr>)
 
                 })}
-                <tfoot className="cart-totals">
-                    <tr className="cart-total">
-                        <td className="cart-total-label">Subtotal:</td>
-                        <td className="cart-total-value">{subTotal}EGP</td>
-                    </tr>
-                    <tr className="cart-total">
-                        <td className="cart-total-label">Shipping:</td>
-                        <td className="cart-total-value">1,027EGP</td>
-                    </tr>
-                    <tr className="cart-total">
-                        <td className="cart-total-label">Website Fees + VAT inluded:</td>
-                        <td className="cart-total-value">1,027EGP</td>
-                    </tr>
-                    <tr className="cart-total cart-total-grand">
-                        <td className="cart-total-label">Grand total</td>
-                        <td className="cart-total-value">{grandTotal}EGP</td>
-                    </tr>
-                    <tr className="cart-action">
+                <tr className="cart-totals">
+                    <td className="cart-total">
+                        <div className="cart-total-label">Subtotal:</div>
+                        <div className="cart-total-value">{subTotal}EGP</div>
+                    </td>
+                    <td className="cart-total">
+                        <div className="cart-total-label">Shipping:</div>
+                        <div className="cart-total-value">{shipping}EGP</div>
+                    </td>
+                    <td className="cart-total">
+                        <div className="cart-total-label">Website Fees + VAT inluded:</div>
+                        <div className="cart-total-value">{feesAndVat}EGP</div>
+                    </td>
+                    <td className="cart-total cart-total-grand">
+                        <div className="cart-total-label">Grand total</div>
+                        <div className="cart-total-value">{grandTotal}EGP</div>
+                    </td>
+                    <td className="cart-action">
                         <button><Link to="/">checkout</Link></button>
-                    </tr>
-                </tfoot>
+                    </td>
+                </tr>
             </tbody>
 
         </table>
