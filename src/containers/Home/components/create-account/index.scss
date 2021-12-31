@@ -1,0 +1,9 @@
+@import "/public/css/mixins";
+
+.cancel-btn {
+    text-transform:uppercase;
+    padding: .7rem 1.5rem;
+    @include btn;
+    font-size: .8rem;
+    background-color: white;
+}

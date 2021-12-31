@@ -1,0 +1,16 @@
+@import '/public/css/colors.scss';
+@import "/public/css/mixins";
+
+.login-input { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.login-btn {
+    text-transform:uppercase;
+    padding: .7rem 1.5rem;
+    @include dark-btn;
+    @include btn;
+    font-size: .8rem;
+    margin-right: .5rem;
+}

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CreateAccount } from '../create-account';
+import { Login } from '../login';
+import { ShippingAddress } from '../shipping-address';
 import './index.scss'
 
 
@@ -17,14 +20,19 @@ export const Checkout = () => {
                         <div className="step-number">1</div>
                         <div className="step-title">Customer</div>
                     </div>
-                    <div className="step-content"></div>
+                    <div className="step-content">
+                        {/* <Login /> */}
+                        <CreateAccount />
+                    </div>
                 </li>
                 <li className="step">
                     <div className="step-header">
                         <div className="step-number">2</div>
                         <div className="step-title">Shipping</div>
                     </div>
-                    <div className="step-content"></div>
+                    <div className="step-content">
+                        <ShippingAddress />
+                    </div>
                 </li>
                 <li className="step">
                     <div className="step-header">
@@ -44,7 +52,7 @@ export const Checkout = () => {
             <div className="order-summary">
                     <div className="order-summary-header">
                         <h3>Order Summary</h3>
-                        <Link to="/cart">Edit Cart</Link>
+                        <Link to="/cart" className='link-color'>Edit Cart</Link>
                     </div>
                     <div className="product-list">
                     <h3 className="product-list-count">3 Items</h3>
