@@ -79,7 +79,7 @@ export const Cart = () => {
                         <div className="cart-total-value">{grandTotal}EGP</div>
                     </td>
                     <td className="cart-action">
-                        <button><Link to="/">checkout</Link></button>
+                        <button><Link to="/checkout">checkout</Link></button>
                     </td>
                 </tr>
             </tbody>

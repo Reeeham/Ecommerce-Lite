@@ -3,11 +3,11 @@ import Content from './Content'
 import Footer from './Footer/index'
 import Header from './Header/Header'
 
-const Layout = () => {
+const Layout = ({children}) => {
     return (
         <div className="main-container full-height">
             <Header />
-            <Content />
+            <Content>{children}</Content>
             <Footer />
         </div>
     )

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CreateAccount } from '../create-account';
-import { Login } from '../login';
-import { ShippingAddress } from '../shipping-address';
+import { CreateAccount } from '../../components/create-account';
+import { Login } from '../../components/login';
+import { Payment } from './components/payment';
+import { ShippingAddress } from './components/shipping-address';
 import './index.scss'
 
 
@@ -46,7 +47,9 @@ export const Checkout = () => {
                         <div className="step-number">4</div>
                         <div className="step-title">Payment</div>
                     </div>
-                    <div className="step-content"></div>
+                    <div className="step-content">
+                        <Payment />
+                    </div>
                 </li>
             </ul>
             <div className="order-summary">
