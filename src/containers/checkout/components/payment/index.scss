@@ -9,35 +9,38 @@
     border: 0.1rem solid color(light-grey);
     border-radius: 4px;
     
-}
+
 .payment-option-card { 
+    width: calc(100% - 2*.6rem);
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 2.2;
     padding:.6rem;
     border-bottom: 0.1rem solid color(light-grey);
+    display: flex;
+    .payment-radio-button  {
+        align-self: flex-start;
+        flex-grow: 1;
+        input[type="radio"] {
+            content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.6rem;
+        border-radius: 50%;
+        border: 0.1rem solid color(light-grey);
+        }
+    }
+    .payment-icons { 
+        display: flex;
+        align-self: center;
+        width: 50%;
+        grid-gap: .3rem;
+    }
 }
 .payment-option-card:last-child { 
     border-bottom: none;
 }
-.payment-radio-button{ 
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.6rem;
-    border-radius: 50%;
-    border: 0.1rem solid color(light-grey);
 }
-.payment-option-card { 
-    display: flex;
-    justify-content: space-between;
-    .payment-radio-button  {
-        align-self: flex-start;
-    }
-    .payment-icons { 
-        display: flex;
-        align-self: flex-end;
-    }
-}
+
