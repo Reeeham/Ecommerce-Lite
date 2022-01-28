@@ -1,4 +1,5 @@
 @import '/public/css/colors.scss';
+@import '/public/css/mixins';
 
 
 .payment-options-list { 
@@ -8,21 +9,18 @@
     flex-direction: column;
     border: 0.1rem solid color(light-grey);
     border-radius: 4px;
-    
-
-.payment-option-card { 
-    width: calc(100% - 2*.6rem);
+    width: fit-content;
+}
+.payment-option-header { 
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 2.2;
     padding:.6rem;
-    border-bottom: 0.1rem solid color(light-grey);
     display: flex;
     .payment-radio-button  {
-        align-self: flex-start;
         flex-grow: 1;
         input[type="radio"] {
-            content: "";
+        content: "";
         display: inline-block;
         vertical-align: middle;
         width: 2rem;
@@ -30,17 +28,42 @@
         margin-right: 0.6rem;
         border-radius: 50%;
         border: 0.1rem solid color(light-grey);
+        
+        }
+        :checked { 
+            background: red;
+
         }
     }
     .payment-icons { 
         display: flex;
         align-self: center;
-        width: 50%;
+        //width: 30%;
         grid-gap: .3rem;
     }
 }
-.payment-option-card:last-child { 
-    border-bottom: none;
+
+.payment-option-card { 
+    border-bottom: 0.1rem solid color(light-grey);
+    display: flex;
+    flex-direction: column;
+     &:nth-child(3) { 
+        border-bottom: none;
+    }
+    .payment-option-form { 
+        margin: 1rem;
+        box-sizing:border-box;
+        .payment-form-input { 
+            display: flex;
+            input { 
+                border: none;
+                flex-grow: 1;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
 }
-}
+
 

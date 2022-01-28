@@ -1,4 +1,5 @@
 @import '/public/css/colors.scss';
+@import "/public/css/mixins";
 
 .stepper-container { 
   height: 100%;
@@ -16,14 +17,19 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  @include mobile { 
+    width: 100%;
+  }
+ 
   .step { 
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    border-bottom: 1px solid color(light-grey);
+    padding: 2.5rem 0;
+    
     .step-header { 
       display: flex;
       align-items: center;
-      border-bottom: 1px solid color(light-grey);
       padding-bottom: 1.5rem;
       .step-number { 
         border: 1px solid color(grey);
@@ -44,15 +50,21 @@
         font-family: Rubik,Arial,Helvetica,sans-serif;
       }
     }
+   
+  }
+  :first-child{
+    padding-top: 0 !important;
+
   }
 }
-
 .order-summary { 
   width: 35%;
   border-radius: 0.2rem;
   border: 1px solid color(light-grey);
   box-shadow: 0 1px 4px rgb(221 221 221 / 60%);
-
+  @include mobile { 
+    display: none;
+  }
   .order-summary-header{
     display: flex;
     justify-content: space-between;

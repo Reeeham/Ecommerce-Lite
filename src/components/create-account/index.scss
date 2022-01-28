@@ -1,4 +1,5 @@
 @import "/public/css/mixins";
+@import '/public/css/colors.scss';
 
 .cancel-btn {
     text-transform:uppercase;
@@ -6,4 +7,5 @@
     @include btn;
     font-size: .8rem;
     background-color: white;
+    border: 1px solid color(grey);
 }

@@ -111,6 +111,7 @@ img {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: flex;
 }
 .form-label { 
   cursor: pointer;
@@ -121,9 +122,4 @@ img {
   margin-bottom: 0.375rem;
   color: #666;
 
-}
-.full-input { 
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
 }
