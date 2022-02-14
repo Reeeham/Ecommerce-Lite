@@ -23,14 +23,13 @@ export const CreateAccount = () => {
                 </div>
             </div>
             <div className="inputs-row">
-
                 <div className='input'>
                     <label className='form-label'>Password</label>
                     <input className='form-input' />
                 </div>
             </div>
 
-            <button className='login-btn'>create account</button>
+            <button className='primary-btn'>create account</button>
             <button className='cancel-btn'>cancel</button>
 
         </form>)

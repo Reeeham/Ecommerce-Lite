@@ -1,4 +1,5 @@
 @import '/public/css/mixins';
+@import '/public/css/colors.scss';
 
 html,body{
   overflow-x: hidden;
@@ -56,6 +57,21 @@ a{
 a:active{
   color: color(grey);
 }
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.primary-btn {
+  text-transform:uppercase;
+  padding: .7rem 1.5rem;
+  @include dark-btn;
+  @include btn;
+  font-size: .8rem;
+  margin-right: .5rem;
+}
 .cursor { 
   cursor: pointer;
 
@@ -74,4 +90,54 @@ a:active{
   flex-direction: column;
   margin-bottom: 1rem;
   flex:1;
+}
+
+.options-list { 
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid color(light-grey);
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.option-header { 
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 2.2;
+  padding:.6rem;
+  display: flex;
+  .radio-button  {
+      flex-grow: 1;
+      input[type="radio"] {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.6rem;
+      border-radius: 50%;
+      border: 0.1rem solid color(light-grey);
+      
+      }
+      :checked { 
+          background: red;
+
+      }
+  }
+ 
+}
+.option-card { 
+  border-bottom: 0.1rem solid color(light-grey);
+  display: flex;
+  flex-direction: column;
+   &:nth-child(3) { 
+      border-bottom: none;
+  }
+  .option-form { 
+      margin: 1rem;
+      box-sizing:border-box;
+  
+  }
 }

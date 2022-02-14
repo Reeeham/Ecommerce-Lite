@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './index.scss'
 import {
@@ -5,12 +6,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 export const Payment = () => {
+
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("online");
+    const handlePaymentMethodChange = (evt) => { 
+        const value = evt.target.value;
+        setSelectedPaymentMethod(value);
+    }
     return (<>
-            <ul className="payment-options-list">
-                <li className="payment-option-card">
-                    <div className="payment-option-header">
-                        <div className="payment-radio-button">
-                            <input type="radio" name="payment-method" checked className="payment-radio-button" />Online payment
+            <ul className="options-list">
+                <li className="option-card">
+                    <div className="option-header">
+                        <div className="radio-button">
+                            <input type="radio" name="payment-method" value="online" checked={selectedPaymentMethod === "online"} onChange={handlePaymentMethodChange} className="radio-button" />Online payment
                         </div>
                         <div className="payment-icons">
                             <FontAwesomeIcon icon={faCreditCard} color="blue" />
@@ -18,8 +25,8 @@ export const Payment = () => {
                             <FontAwesomeIcon icon={faCreditCard} color="blue" />
                             <FontAwesomeIcon icon={faCreditCard} color="blue" />
                         </div>
-                    </div>
-                    <form className="payment-option-form">
+                    </div> 
+                    {selectedPaymentMethod === "online" && <form className="option-form">
                     <div className="inputs-row">
                         <div className="input">
                             <label className='form-label'>Credit Card Number</label>
@@ -47,20 +54,20 @@ export const Payment = () => {
                             </div>
                         </div>
 
-                    </form>
+                    </form>}
+                  
                 </li>
-                <li className="payment-option-card">
-                    <div className="payment-option-header">
-                        <div className="payment-radio-button">
-                            <input type="radio" name="payment-method" className="payment-radio-button" />Pay monthly by valU (above 500LE)
+                <li className="option-card">
+                    <div className="option-header">
+                        <div className="radio-button">
+                            <input type="radio" name="payment-method" value="valu" checked={selectedPaymentMethod === "valu"} onChange={handlePaymentMethodChange} className="radio-button" />Pay monthly by valU (above 500LE)
                         </div>
                     </div>
                 </li>
-                <li className="payment-option-card">
-                    <div className="payment-option-header">
-                        <div className="payment-radio-button">
-
-                            <input type="radio" name="payment-method" className="payment-radio-button" />Cash on Delivery
+                <li className="option-card">
+                    <div className="option-header">
+                        <div className="radio-button">
+                            <input type="radio" name="payment-method" value="cash"  checked={selectedPaymentMethod === "cash"} onChange={handlePaymentMethodChange} className="radio-button" />Cash on Delivery
                         </div>
                     </div>
                 </li>

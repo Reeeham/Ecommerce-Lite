@@ -97,7 +97,7 @@ const DesktopNavbar = () => {
                         className="cursor"
                     />
                     {accountDropdownOpen &&
-                        <div onMouseLeave={toggleAccountDropDownBtn} class="dropdown-content">
+                        <div onMouseLeave={toggleAccountDropDownBtn} className="dropdown-content">
                             <Link to="/">Profile</Link>
                             <Link to="/">Orders</Link>
                             <Link to="/">Logout</Link>
@@ -121,7 +121,7 @@ const DesktopNavbar = () => {
                         className="cursor"
                     />
                     {countriesDropdownOpen &&
-                        <div onMouseLeave={toggleCountriesDropDownBtn} class="dropdown-content flags-dropdown-content" onBlur={toggleCountriesDropDownBtn}>
+                        <div onMouseLeave={toggleCountriesDropDownBtn} className="dropdown-content flags-dropdown-content" onBlur={toggleCountriesDropDownBtn}>
                             <Link to="/" onClick={() => handleCountryChange('./../../images/countries-icons/egypt.svg')}>
                                 <img
                                     className="country-img"

@@ -16,6 +16,6 @@ export const Login = () => {
                 <input className='form-input' />
             </div>
         </div>
-        <button className='login-btn'>sign in</button>
+        <button className='primary-btn'>sign in</button>
     </>);
 }

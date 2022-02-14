@@ -1,11 +1,1 @@
-@import "/public/css/mixins";
 
-
-.login-btn {
-    text-transform:uppercase;
-    padding: .7rem 1.5rem;
-    @include dark-btn;
-    @include btn;
-    font-size: .8rem;
-    margin-right: .5rem;
-}
